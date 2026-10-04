@@ -27,6 +27,7 @@ require_once QBATURA_CORE_DIR . 'inc/taxonomies.php';
 require_once QBATURA_CORE_DIR . 'inc/project-fields.php';
 require_once QBATURA_CORE_DIR . 'inc/blocks.php';
 require_once QBATURA_CORE_DIR . 'inc/settings.php';
+require_once QBATURA_CORE_DIR . 'inc/contact-form.php';
 require_once QBATURA_CORE_DIR . 'inc/polylang.php';
 
 /**

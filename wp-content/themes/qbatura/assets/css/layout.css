@@ -276,12 +276,13 @@
 	content: ']';
 }
 
-.qbatura-filters a:hover,
-.qbatura-filters a[aria-current] {
+.qbatura-filters a:hover {
 	letter-spacing: 0.18em;
 }
 
+/* Aktywny filtr: wyraźnie szersze rozstrzelenie + ciemny tekst (nagłówek strony zostaje „Realizacje”). */
 .qbatura-filters a[aria-current] {
+	letter-spacing: 0.26em;
 	color: var(--c-text);
 }
 

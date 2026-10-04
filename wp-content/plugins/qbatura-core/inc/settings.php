@@ -4,7 +4,7 @@
  *
  * Wartość z panelu (Ustawienia → Ogólne) można nadpisać stałą QBATURA_FORM_RECIPIENT
  * w wp-config.php danego środowiska (np. na stagingu, żeby wiadomości testowe nie trafiały do klientki).
- * Podpięcie pod akcję e-mail w WS Form — przy budowie formularza (Etap 4).
+ * Podpięcie pod akcję e-mail w WS Form: inc/contact-form.php.
  *
  * @package qbatura-core
  */

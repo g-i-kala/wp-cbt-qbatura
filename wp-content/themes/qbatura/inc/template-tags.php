@@ -10,16 +10,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Adres strony „Realizacje” — pierwszej opublikowanej strony z szablonem „Realizacje — lista z filtrami”.
+ * ID strony „Realizacje” — pierwszej opublikowanej strony z szablonem „Realizacje — lista z filtrami”.
  * Z Polylang zapytanie zwraca stronę w bieżącym języku.
  *
- * @return string
+ * @return int 0, gdy brak.
  */
-function qbatura_projects_page_url() {
-	static $url = null;
+function qbatura_projects_page_id() {
+	static $id = null;
 
-	if ( null !== $url ) {
-		return $url;
+	if ( null !== $id ) {
+		return $id;
 	}
 
 	$pages = get_posts(
@@ -33,9 +33,31 @@ function qbatura_projects_page_url() {
 		)
 	);
 
-	$url = $pages ? get_permalink( $pages[0] ) : home_url( '/realizacje/' );
+	$id = $pages ? (int) $pages[0] : 0;
 
-	return $url;
+	return $id;
+}
+
+/**
+ * Adres strony „Realizacje”.
+ *
+ * @return string
+ */
+function qbatura_projects_page_url() {
+	$id = qbatura_projects_page_id();
+
+	return $id ? get_permalink( $id ) : home_url( '/realizacje/' );
+}
+
+/**
+ * Tytuł strony „Realizacje” (nagłówek listy i archiwów kategorii).
+ *
+ * @return string
+ */
+function qbatura_projects_page_title() {
+	$id = qbatura_projects_page_id();
+
+	return $id ? get_the_title( $id ) : __( 'Realizacje', 'qbatura' );
 }
 
 /**

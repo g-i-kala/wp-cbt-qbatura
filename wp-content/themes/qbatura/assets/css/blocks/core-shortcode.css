@@ -1,0 +1,143 @@
+/*
+ * Formularz kontaktowy WS Form (klasa „qbatura-contact-form”) — wygląd z makiety (.kontakt-form).
+ * Ładowany z blokiem Shortcode, którym wzorzec qbatura/contact osadza formularz.
+ * Selektory zaczynają się od .wsf-form.qbatura-contact-form, żeby wygrać z CSS WS Form
+ * bez !important i niezależnie od kolejności ładowania.
+ */
+
+.wsf-form.qbatura-contact-form {
+	--qbatura-form-gap: 1.25rem;
+	--qbatura-form-error: #9b1c1c; /* ciemna czerwień: kontrast ≥ 4.5:1 na szałwii i bieli */
+
+	/* Stan błędu walidacji — przez zmienne WS Form (jego reguły :invalid mają wyższą wagę). */
+	--wsf-field-color-background-invalid: transparent;
+	--wsf-field-border-color-invalid: var(--qbatura-form-error);
+	--wsf-field-invalid-feedback-color: var(--qbatura-form-error);
+	--wsf-field-invalid-feedback-font-size: var(--fs-xs);
+	--wsf-field-invalid-feedback-gap: 0.35rem;
+	font-family: inherit;
+}
+
+/* Odstęp między polami (makieta: gap 1.25rem). */
+.wsf-form.qbatura-contact-form .wsf-field-wrapper {
+	margin-bottom: var(--qbatura-form-gap);
+}
+
+.wsf-form.qbatura-contact-form .wsf-field-wrapper.wsf-bottom {
+	margin-bottom: 0;
+}
+
+/* Etykiety */
+.wsf-form.qbatura-contact-form label.wsf-label {
+	margin: 0 0 0.35rem;
+	padding: 0;
+	font-size: var(--fs-2xs);
+	font-weight: 500;
+	letter-spacing: 0.14em;
+	line-height: normal;
+	text-transform: uppercase;
+	color: var(--c-text-muted);
+	background: none;
+}
+
+/* Pola: tylko dolna linia w odcieniu tła (E8), bez ramek i zaokrągleń. */
+.wsf-form.qbatura-contact-form .wsf-field-wrapper input.wsf-field,
+.wsf-form.qbatura-contact-form .wsf-field-wrapper textarea.wsf-field {
+	display: block;
+	width: 100%;
+	height: auto;
+	min-height: 0;
+	margin: 0;
+	padding: 0.55rem 0;
+	font-family: inherit;
+	font-size: 0.875rem;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: normal;
+	color: var(--c-text);
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid var(--c-border);
+	border-radius: 0;
+	box-shadow: none;
+	outline: none;
+	transition: border-color 0.2s;
+}
+
+.wsf-form.qbatura-contact-form .wsf-field-wrapper .wsf-field::placeholder {
+	color: #757575;
+	opacity: 1;
+}
+
+.wsf-form.qbatura-contact-form .wsf-field-wrapper input.wsf-field:focus,
+.wsf-form.qbatura-contact-form .wsf-field-wrapper textarea.wsf-field:focus {
+	border-color: var(--c-text);
+	box-shadow: none;
+}
+
+.wsf-form.qbatura-contact-form .wsf-field-wrapper input.wsf-field:focus-visible,
+.wsf-form.qbatura-contact-form .wsf-field-wrapper textarea.wsf-field:focus-visible {
+	outline: 2px solid var(--c-text);
+	outline-offset: 2px;
+}
+
+.wsf-form.qbatura-contact-form .wsf-field-wrapper textarea.wsf-field {
+	min-height: 110px;
+	resize: vertical;
+}
+
+/* Przycisk — jak przyciski motywu: ochra, ciemny tekst (W2), hover oliwka. */
+.wsf-form.qbatura-contact-form .wsf-field-wrapper button.wsf-button {
+	width: auto;
+	margin: 0;
+	padding: 0.85rem 2.5rem;
+	font-family: inherit;
+	font-size: var(--fs-xs);
+	font-weight: 700;
+	letter-spacing: 0.22em;
+	line-height: normal;
+	text-transform: uppercase;
+	color: var(--c-text);
+	background: var(--c-earth);
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	cursor: pointer;
+	transition:
+		background 0.22s ease,
+		transform 0.18s ease;
+}
+
+.wsf-form.qbatura-contact-form .wsf-field-wrapper button.wsf-button:focus-visible {
+	outline: 2px solid var(--c-text);
+	outline-offset: 3px;
+}
+
+@media (hover: hover) {
+	.wsf-form.qbatura-contact-form .wsf-field-wrapper button.wsf-button:hover {
+		background: var(--c-olive-dark);
+		transform: translateY(-1px);
+	}
+}
+
+/* Komunikat po wysłaniu (K5) — zwykły tekst jak w makiecie (.form-status), bez ramki.
+   WS Form wstawia go przed formularzem: <div role="alert"><div class="wsf-alert">…</div></div><form>. */
+:has(+ .qbatura-contact-form) > .wsf-alert.wsf-alert {
+	margin: 0 0 var(--qbatura-form-gap);
+	padding: 0;
+	font-family: inherit;
+	font-size: 0.875rem;
+	line-height: 1.7;
+	color: var(--c-text);
+	background: none;
+	border: none;
+	border-radius: 0;
+}
+
+:has(+ .qbatura-contact-form) > .wsf-alert.wsf-alert > p {
+	color: inherit;
+}
+
+:has(+ .qbatura-contact-form) > .wsf-alert.wsf-alert.wsf-alert-danger {
+	color: #9b1c1c;
+}

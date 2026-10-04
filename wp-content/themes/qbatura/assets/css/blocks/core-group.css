@@ -316,6 +316,99 @@ body:not(.editor-styles-wrapper) .is-style-qbatura-band > .wp-block-heading a::a
 	color: var(--c-text-muted);
 }
 
+/* ─── KONTAKT: DANE I FORMULARZ (makieta: .kontakt-*) ─── */
+
+.wp-block-group.qbatura-contact {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.qbatura-contact.qbatura-contact > *,
+.qbatura-contact__col.qbatura-contact__col > *,
+.qbatura-contact-list.qbatura-contact-list > *,
+.qbatura-contact-list.qbatura-contact-list > * > * {
+	margin: 0;
+}
+
+.wp-block-group.qbatura-contact__col {
+	padding: 4rem var(--qbatura-gutter);
+}
+
+.qbatura-contact__col:first-child {
+	border-right: 1px solid var(--c-border);
+}
+
+.qbatura-contact__col.qbatura-contact__col > .is-style-qbatura-eyebrow {
+	margin-bottom: 2.5rem;
+}
+
+/* Pozycja: etykieta + wartość, oddzielone cienką linią (ostatnia bez linii, jak w makiecie).
+   Potrójna klasa: WP zeruje dolny margines ostatniego bloku w grupie, a makieta go zostawia. */
+.qbatura-contact-list.qbatura-contact-list.qbatura-contact-list > * {
+	margin-bottom: 1.5rem;
+	padding-bottom: 1.5rem;
+	border-bottom: 1px solid var(--c-border);
+}
+
+.qbatura-contact-list.qbatura-contact-list.qbatura-contact-list > *:last-child {
+	border-bottom: none;
+}
+
+.qbatura-contact-list.qbatura-contact-list > * > p:first-child {
+	margin-bottom: 0.35rem;
+	font-size: var(--fs-2xs);
+	font-weight: 500;
+	letter-spacing: 0.14em;
+	line-height: normal;
+	text-transform: uppercase;
+	color: var(--c-text-muted);
+}
+
+.qbatura-contact-list > * > p:last-child {
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: normal;
+}
+
+/* Telefon i e-mail to samodzielne wartości, nie link w zdaniu — bez podkreślenia (jak w makiecie). */
+.qbatura-contact-list.qbatura-contact-list > * > p:last-child a {
+	text-decoration: none;
+}
+
+@media (hover: hover) {
+	.qbatura-contact-list > * > p:last-child a:hover {
+		opacity: 0.6;
+	}
+}
+
+/* ─── MAPA DOJAZDU ─── */
+
+.wp-block-group.qbatura-map {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 280px;
+	padding: 0 var(--qbatura-gutter);
+	border-top: var(--line-soft);
+	text-align: center;
+}
+
+.qbatura-map.qbatura-map > * {
+	margin: 0;
+}
+
+.qbatura-map.qbatura-map > .is-style-qbatura-eyebrow {
+	margin-bottom: 0.6rem;
+	letter-spacing: 0.22em;
+}
+
+.qbatura-map > p:last-child {
+	font-size: 0.875rem;
+	line-height: normal;
+	color: var(--c-text-muted);
+}
+
 /* ─── RWD ─── */
 
 @media (max-width: 1024px) {
@@ -351,5 +444,18 @@ body:not(.editor-styles-wrapper) .is-style-qbatura-band > .wp-block-heading a::a
 	.wp-block-group.qbatura-about {
 		grid-template-columns: 1fr;
 		gap: 2.5rem;
+	}
+
+	.wp-block-group.qbatura-contact {
+		grid-template-columns: 1fr;
+	}
+
+	.wp-block-group.qbatura-contact__col {
+		padding: 2.5rem var(--qbatura-gutter);
+	}
+
+	.qbatura-contact__col:first-child {
+		border-right: none;
+		border-bottom: var(--line-soft);
 	}
 }
