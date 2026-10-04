@@ -3,7 +3,7 @@
  * Style bloków (warianty wybierane w panelu „Style” bloku).
  *
  * CSS stylów jest w assets/css/blocks/{blok}.css, ładowanym tylko z danym blokiem.
- * Kolejne style (pasy oferty, statystyki, drzewo) dochodzą razem z wzorcami sekcji.
+ * Kolejne style (statystyki, drzewo) dochodzą razem z wzorcami sekcji.
  *
  * @package qbatura
  */
@@ -28,6 +28,10 @@ function qbatura_register_block_styles() {
 		),
 		'core/gallery'   => array(
 			'qbatura-grid' => __( 'Siatka Qbatura', 'qbatura' ),
+		),
+		'core/group'     => array(
+			'qbatura-section' => __( 'Sekcja', 'qbatura' ),
+			'qbatura-band'    => __( 'Pas oferty', 'qbatura' ),
 		),
 	);
 

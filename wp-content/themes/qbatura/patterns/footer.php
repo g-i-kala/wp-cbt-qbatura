@@ -18,8 +18,8 @@ if ( ! $qbatura_privacy_url ) {
 }
 $qbatura_cookies_url = home_url( '/polityka-cookies/' );
 ?>
-<!-- wp:group {"tagName":"footer","className":"qbatura-footer","backgroundColor":"text","textColor":"white","layout":{"type":"default"}} -->
-<footer class="wp-block-group qbatura-footer has-white-color has-text-background-color has-text-color has-background">
+<!-- wp:group {"tagName":"footer","className":"qbatura-footer","backgroundColor":"dark","textColor":"white","layout":{"type":"default"}} -->
+<footer class="wp-block-group qbatura-footer has-white-color has-dark-background-color has-text-color has-background">
 	<!-- wp:group {"className":"qbatura-footer__top","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 	<div class="wp-block-group qbatura-footer__top">
 		<!-- wp:navigation {"overlayMenu":"never","className":"qbatura-footer-nav","layout":{"type":"flex","flexWrap":"wrap"}} /-->

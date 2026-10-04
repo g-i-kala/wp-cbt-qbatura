@@ -285,6 +285,14 @@
 	color: var(--c-text);
 }
 
+/* ─── STRONA SEKCYJNA ─── */
+/* Sekcje (hero, pasy, sekcje treści) leżą jedna pod drugą bez odstępu — jak w makiecie. */
+
+.qbatura-sections.qbatura-sections > *,
+.qbatura-bands.qbatura-bands > * {
+	margin-block: 0;
+}
+
 /* ─── TREŚĆ STRON PROSTYCH ─── */
 
 .qbatura-page-content {

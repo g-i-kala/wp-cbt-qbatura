@@ -1,0 +1,213 @@
+/*
+ * Style bloku Grupa: sekcje stron (makieta: .content-section, .service-band, .process-grid).
+ * Elementy wewnątrz stylizowane po strukturze (pierwszy akapit, nagłówek, ostatni akapit),
+ * żeby skopiowany lub zduplikowany w edytorze pas / krok wyglądał tak samo.
+ */
+
+/* ─── SEKCJA (styl „Sekcja”) ─── */
+
+.wp-block-group.is-style-qbatura-section {
+	padding: 4rem var(--qbatura-gutter);
+	border-top: var(--line-soft);
+}
+
+.is-style-qbatura-section.is-style-qbatura-section > * {
+	margin-block: 0;
+}
+
+.is-style-qbatura-section > .is-style-qbatura-eyebrow {
+	margin-bottom: 2.5rem;
+}
+
+/* ─── PASY OFERTY (styl „Pas oferty”) ─── */
+
+.wp-block-group.is-style-qbatura-band {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 4rem;
+	padding: 3rem var(--qbatura-gutter);
+	border-bottom: var(--line);
+	transition: opacity 0.2s;
+}
+
+.is-style-qbatura-band:first-child {
+	border-top: var(--line);
+}
+
+.is-style-qbatura-band.is-style-qbatura-band > * {
+	margin: 0;
+}
+
+/* Numer */
+.is-style-qbatura-band > p:first-child {
+	min-width: 2rem;
+	font-size: var(--fs-2xs);
+	font-weight: 500;
+	letter-spacing: 0.12em;
+	line-height: normal;
+	color: var(--c-text-muted);
+}
+
+/* Tytuł */
+.is-style-qbatura-band > .wp-block-heading {
+	flex: 0 0 auto;
+	min-width: 220px;
+	font-size: var(--wp--preset--font-size--x-large);
+	font-weight: 900;
+	letter-spacing: -0.02em;
+	line-height: normal;
+	overflow-wrap: break-word;
+}
+
+/* Opis */
+.is-style-qbatura-band > p:last-child {
+	flex: 1;
+	max-width: 38ch;
+	font-size: 0.8rem;
+	line-height: 1.8;
+	color: var(--c-text-muted);
+}
+
+/*
+ * Cały pas klikalny: link z tytułu rozciągnięty na pas (O1/E10).
+ * Tylko na froncie — w edytorze nakładka blokowałaby zaznaczanie bloków.
+ */
+body:not(.editor-styles-wrapper) .is-style-qbatura-band > .wp-block-heading a::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+}
+
+.is-style-qbatura-band > .wp-block-heading a:focus-visible {
+	outline: none;
+}
+
+.is-style-qbatura-band:has(a:focus-visible) {
+	outline: 2px solid var(--c-text);
+	outline-offset: -6px;
+}
+
+@media (hover: hover) {
+	.is-style-qbatura-band:has(a:hover) {
+		opacity: 0.88;
+	}
+}
+
+/* ─── KROKI „JAK PRACUJEMY” ─── */
+/* Mobile-first: 1 kol. → 2 kol. (481–1024) → 4 kol. (≥1025). */
+
+.wp-block-group.qbatura-steps {
+	display: grid;
+	grid-template-columns: 1fr;
+	border-top: var(--line-soft);
+}
+
+.qbatura-steps.qbatura-steps > * {
+	margin: 0;
+	padding: 1.5rem 0;
+	border-bottom: 1px solid var(--c-border);
+}
+
+.qbatura-steps > *:last-child {
+	border-bottom: none;
+}
+
+.qbatura-steps.qbatura-steps > * > * {
+	margin: 0;
+}
+
+/* Numer — kolor ustawiany w edytorze (Styl → Kolor → Tekst), domyślnie zieleń główna. */
+.qbatura-steps > * > p:first-child {
+	margin-bottom: 1rem;
+	font-size: var(--wp--preset--font-size--large);
+	font-weight: 900;
+	line-height: 1;
+}
+
+.qbatura-steps > * > p:first-child:not(.has-text-color) {
+	color: var(--wp--preset--color--green-main);
+}
+
+.qbatura-steps > * > .wp-block-heading {
+	margin-bottom: 0.5rem;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	line-height: normal;
+}
+
+.qbatura-steps > * > p:last-child {
+	font-size: 0.72rem;
+	line-height: 1.7;
+	color: var(--c-text-muted);
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+	.wp-block-group.qbatura-steps {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.qbatura-steps.qbatura-steps > * {
+		padding: 2rem;
+		border-bottom: none;
+	}
+
+	.qbatura-steps.qbatura-steps > :nth-child(2n + 1) {
+		padding-left: 0;
+		border-right: 1px solid var(--c-border);
+	}
+
+	.qbatura-steps.qbatura-steps > :nth-child(2n) {
+		padding-right: 0;
+	}
+
+	.qbatura-steps.qbatura-steps > :nth-child(-n + 2) {
+		border-bottom: 1px solid var(--c-border);
+	}
+}
+
+@media (min-width: 1025px) {
+	.wp-block-group.qbatura-steps {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.qbatura-steps.qbatura-steps > * {
+		padding: 2rem;
+		border-bottom: none;
+		border-right: 1px solid var(--c-border);
+	}
+
+	.qbatura-steps.qbatura-steps > :first-child {
+		padding-left: 0;
+	}
+
+	.qbatura-steps.qbatura-steps > :last-child {
+		padding-right: 0;
+		border-right: none;
+	}
+}
+
+/* ─── RWD ─── */
+
+@media (max-width: 1024px) {
+	.wp-block-group.is-style-qbatura-band {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.wp-block-group.is-style-qbatura-section {
+		padding: 2.5rem var(--qbatura-gutter);
+	}
+
+	.wp-block-group.is-style-qbatura-band {
+		padding: 2rem var(--qbatura-gutter);
+	}
+
+	.is-style-qbatura-band > .wp-block-heading {
+		min-width: unset;
+	}
+}

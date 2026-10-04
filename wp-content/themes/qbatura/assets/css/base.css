@@ -11,9 +11,9 @@
 	--c-earth: var(--wp--preset--color--earth);
 	--c-terracotta: var(--wp--preset--color--terracotta);
 	--c-white: var(--wp--preset--color--white);
-	--c-text: var(--wp--preset--color--text);
+	--c-text: var(--wp--preset--color--dark);
 	--c-text-muted: var(--wp--preset--color--text-muted);
-	--c-border: var(--wp--preset--color--border);
+	--c-border: var(--wp--preset--color--line);
 
 	/* Tekst pomocniczy na kolorowych tłach (terakota, oliwka, ochra) — kontrast ≥ 4.5:1 (W2). */
 	--c-text-on-color: #262626;
@@ -116,7 +116,7 @@ address {
 	font-size: var(--fs-2xs) !important;
 	font-weight: 500;
 	letter-spacing: 0.2em;
-	line-height: 1.6;
+	line-height: normal;
 	text-transform: uppercase;
 	color: var(--c-text-muted);
 }
