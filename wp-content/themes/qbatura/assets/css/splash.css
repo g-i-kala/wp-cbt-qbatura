@@ -1,0 +1,173 @@
+/*
+ * Strona główna: ekran 1 (powitanie) i ekran 2 (menu). Ładowane tylko na stronie głównej.
+ * Źródło: html_design/assets/styles.css (#screen-1, #screen-2).
+ */
+
+.qbatura-splash {
+	position: fixed;
+	inset: var(--qbatura-admin-bar) 0 0;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+}
+
+.qbatura-splash > * {
+	margin-block: 0;
+}
+
+/* ─── EKRAN 1 ─── */
+
+.qbatura-splash--intro {
+	--s1-pad: 1.5rem;
+	z-index: 10;
+	transition:
+		opacity 0.55s ease,
+		transform 0.55s ease,
+		visibility 0s linear 0s;
+}
+
+.qbatura-splash--intro.is-hidden {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transform: translateY(-28px);
+	transition:
+		opacity 0.55s ease,
+		transform 0.55s ease,
+		visibility 0s linear 0.55s;
+}
+
+.qbatura-splash__top {
+	padding: 1.25rem var(--qbatura-gutter);
+}
+
+.qbatura-splash__top .qbatura-lang {
+	letter-spacing: 0.12em;
+}
+
+/* Opis zawsze po prawej, także gdy brak przełącznika języka (Polylang wyłączony). */
+.qbatura-splash__top .qbatura-splash__description {
+	margin: 0 0 0 auto;
+	font-size: var(--fs-2xs);
+	letter-spacing: 0.12em;
+	line-height: 1.9;
+	text-align: right;
+	text-transform: uppercase;
+}
+
+.qbatura-splash__center {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.qbatura-splash__enter {
+	padding-bottom: 0.15rem;
+	border-bottom: 1px solid var(--c-text);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.35em;
+	line-height: normal;
+	text-transform: uppercase;
+	user-select: none;
+	transition: opacity 0.2s;
+}
+
+.qbatura-splash__enter:hover {
+	opacity: 0.55;
+}
+
+/*
+ * Słowo „QBATURA” w Inter Black ma ok. 4.95em szerokości.
+ * Dzielnik 5 dopasowuje je do szerokości ekranu minus padding (S3) — nic się nie przycina.
+ */
+.qbatura-splash__brand {
+	overflow: hidden;
+	padding: 0 var(--s1-pad);
+	font-size: clamp(2.5rem, calc((100vw - 2 * var(--s1-pad)) / 5), 20rem);
+	font-weight: 900;
+	letter-spacing: -0.02em;
+	line-height: 0.82;
+	text-transform: uppercase;
+}
+
+/* ─── EKRAN 2 ─── */
+
+.qbatura-splash--menu {
+	z-index: 9;
+	overflow-y: auto;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition:
+		opacity 0.55s ease,
+		visibility 0s linear 0.55s;
+}
+
+.qbatura-splash--menu.is-shown {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+	transition:
+		opacity 0.55s ease,
+		visibility 0s linear 0s;
+}
+
+.qbatura-splash__bar {
+	flex-shrink: 0;
+	height: var(--qbatura-header-h);
+	padding: 0 var(--qbatura-gutter);
+	border-bottom: var(--line);
+}
+
+.qbatura-splash__logo {
+	margin: 0;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.18em;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+/* Kolejna wizyta (flaga w localStorage) — od razu ekran menu, bez animacji. */
+.is-entered .qbatura-splash--intro {
+	display: none;
+}
+
+.is-entered .qbatura-splash--menu {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+	transition: none;
+}
+
+/* Bez JS oba ekrany są zwykłymi sekcjami jeden pod drugim. */
+html:not(.js) .qbatura-splash {
+	position: relative;
+	inset: auto;
+	min-height: 100vh;
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+	.qbatura-splash--intro {
+		--s1-pad: 1rem;
+	}
+
+	.qbatura-splash__top {
+		padding: 1rem var(--qbatura-gutter);
+	}
+
+	.qbatura-splash__description {
+		display: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.qbatura-splash--intro.is-hidden {
+		transform: none;
+	}
+}

@@ -50,6 +50,21 @@ function qbatura_enqueue_assets() {
 			'strategy'  => 'defer',
 		)
 	);
+
+	// Splash — tylko strona główna.
+	if ( is_front_page() ) {
+		wp_enqueue_style( 'qbatura-splash', QBATURA_URI . '/assets/css/splash.css', array( 'qbatura-layout' ), qbatura_asset_version( 'assets/css/splash.css' ) );
+		wp_enqueue_script(
+			'qbatura-splash',
+			QBATURA_URI . '/assets/js/splash.js',
+			array(),
+			qbatura_asset_version( 'assets/js/splash.js' ),
+			array(
+				'in_footer' => true,
+				'strategy'  => 'defer',
+			)
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'qbatura_enqueue_assets' );
 
@@ -85,5 +100,13 @@ add_action( 'init', 'qbatura_enqueue_block_styles' );
  */
 function qbatura_js_class() {
 	wp_print_inline_script_tag( "document.documentElement.classList.add('js');" );
+
+	// Splash tylko przy pierwszej wizycie (S1): przy kolejnej od razu ekran menu, bez mignięcia ekranu 1.
+	// Podgląd splasha ponownie: ?splash w adresie.
+	if ( is_front_page() ) {
+		wp_print_inline_script_tag(
+			"try{if(localStorage.getItem('qbatura-entered')&&!/[?&]splash\\b/.test(location.search)){document.documentElement.classList.add('is-entered');}}catch(e){}"
+		);
+	}
 }
 add_action( 'wp_head', 'qbatura_js_class', 1 );

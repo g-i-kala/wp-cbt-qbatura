@@ -3,6 +3,22 @@
  * Źródło: html_design/assets/styles.css (nazwy klas z prefiksem qbatura-).
  */
 
+/*
+ * Stopka zawsze na dole ekranu — przy krótkiej treści <main> wypełnia wolne miejsce.
+ * Pasek admina WP zajmuje górę ekranu, więc jest odejmowany.
+ */
+.wp-site-blocks {
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - var(--qbatura-admin-bar));
+	min-height: calc(100dvh - var(--qbatura-admin-bar));
+}
+
+.wp-site-blocks > main,
+.wp-site-blocks > .qbatura-main {
+	flex: 1 0 auto;
+}
+
 /* Odstępy między blokami najwyższego poziomu w szablonach — sekcje stykają się jak w makiecie. */
 .wp-site-blocks > * + *,
 .qbatura-main > * + * {

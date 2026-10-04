@@ -25,7 +25,10 @@ function qbatura_block_has_class( $block, $class ) {
  * Nakładka menu (grupa .qbatura-menu) jako okno dialogowe: role, aria-modal, etykieta.
  * Grupa core nie pozwala ustawić tych atrybutów w edytorze.
  *
- * Wordmark w stopce (.qbatura-wordmark) jest dekoracyjny — ukryty przed czytnikami ekranu.
+ * Sekcje splasha (section) dostają etykiety „Powitanie” / „Menu”.
+ *
+ * Wordmark w stopce (.qbatura-wordmark) i logo na ekranie menu (.qbatura-aria-hidden) są dekoracyjne —
+ * ukryte przed czytnikami ekranu.
  *
  * @param string $content HTML bloku.
  * @param array  $block   Blok.
@@ -42,7 +45,21 @@ function qbatura_block_a11y_attributes( $content, $block ) {
 		}
 	}
 
-	if ( qbatura_block_has_class( $block, 'qbatura-wordmark' ) ) {
+	$section_labels = array(
+		'qbatura-splash--intro' => __( 'Powitanie', 'qbatura' ),
+		'qbatura-splash--menu'  => __( 'Menu', 'qbatura' ),
+	);
+	foreach ( $section_labels as $class => $label ) {
+		if ( qbatura_block_has_class( $block, $class ) ) {
+			$tags = new WP_HTML_Tag_Processor( $content );
+			if ( $tags->next_tag() ) {
+				$tags->set_attribute( 'aria-label', $label );
+				$content = $tags->get_updated_html();
+			}
+		}
+	}
+
+	if ( qbatura_block_has_class( $block, 'qbatura-wordmark' ) || qbatura_block_has_class( $block, 'qbatura-aria-hidden' ) ) {
 		$tags = new WP_HTML_Tag_Processor( $content );
 		if ( $tags->next_tag() ) {
 			$tags->set_attribute( 'aria-hidden', 'true' );
