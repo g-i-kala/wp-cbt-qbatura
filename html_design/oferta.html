@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Oferta – Qbatura</title>
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="assets/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+    <!-- MOBILE OVERLAY MENU -->
+    <div aria-label="Menu" aria-modal="true" class="mobile-menu-overlay" id="mobile-menu" role="dialog">
+      <div class="mob-menu-top">
+        <a class="mob-menu-logo" href="index.html">Qbatura</a>
+        <button class="mob-menu-close js-menu-close" type="button">Zamknij</button>
+      </div>
+      <nav aria-label="Menu główne" class="mob-menu-nav">
+        <ul class="mob-menu-list">
+          <li class="mob-menu-item"><a href="realizacje.html">Realizacje</a></li>
+          <li class="mob-menu-item"><a aria-current="page" href="oferta.html">Oferta</a></li>
+          <li class="mob-menu-item"><a href="o-mnie.html">O mnie</a></li>
+          <li class="mob-menu-item"><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <header class="site-header">
+      <a class="logo" href="index.html">Qbatura</a>
+      <div class="header-right">
+        <button aria-controls="mobile-menu" aria-expanded="false" class="menu-link js-menu-open" type="button">
+          Menu
+        </button>
+        <nav aria-label="Wybór języka" class="lang">
+          <a aria-current="true" aria-label="Polski" href="#" hreflang="pl" lang="pl">PL</a>
+          <a aria-label="English" href="#" hreflang="en" lang="en">EN</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page-wrap" id="main">
+      <div class="page-hero page-hero--powder">
+        <h1 class="page-hero-title">Oferta</h1>
+        <hr aria-hidden="true" class="page-hero-divider" />
+        <div class="page-hero-meta">
+          <span class="page-hero-label">Usługi</span>
+          <p class="page-hero-text">
+            Oferujemy kompleksową obsługę projektową — od koncepcji przez projekt budowlany i
+            wykonawczy, aż po nadzór autorski. Każdą usługę realizujemy z pełnym zaangażowaniem i
+            dbałością o szczegóły.
+          </p>
+        </div>
+      </div>
+      <!-- Pasy prowadzą do realizacji z danej kategorii (O1/E10) — cel do potwierdzenia. -->
+      <section aria-label="Usługi" class="section-animate is-visible">
+        <a class="service-band service-band--green-main" href="realizacje.html?kategoria=jednorodzinne">
+          <span class="service-band-num">01</span>
+          <h2 class="service-band-title">Domy</h2>
+          <p class="service-band-desc">
+            Projektujemy domy jednorodzinne dostosowane do indywidualnych potrzeb i możliwości
+            finansowych klienta. Oferujemy pełen zakres usług — od projektu koncepcyjnego, przez
+            budowlany, aż po nadzór nad realizacją.
+          </p>
+        </a>
+        <a class="service-band service-band--powder" href="realizacje.html?kategoria=przemyslowe">
+          <span class="service-band-num">02</span>
+          <h2 class="service-band-title">Przemysłowe</h2>
+          <p class="service-band-desc">
+            Hale produkcyjne, magazyny, zakłady pracy — projektujemy obiekty przemysłowe spełniające
+            najwyższe standardy techniczne i użytkowe. Dbamy o optymalizację procesów logistycznych
+            i efektywność energetyczną.
+          </p>
+        </a>
+        <a class="service-band service-band--earth" href="realizacje.html?kategoria=uzytecznosc-publiczna">
+          <span class="service-band-num">03</span>
+          <h2 class="service-band-title">Użyteczność publiczna</h2>
+          <p class="service-band-desc">
+            Szkoły, przedszkola, centra kultury, biurowce — projektujemy przestrzenie służące
+            społeczności lokalnej, łącząc funkcjonalność z estetyką.
+          </p>
+        </a>
+        <a class="service-band service-band--green-soft" href="realizacje.html?kategoria=wnetrza">
+          <span class="service-band-num">04</span>
+          <h2 class="service-band-title">Wnętrza</h2>
+          <p class="service-band-desc">
+            Projekty wnętrz mieszkalnych i komercyjnych — od koncepcji kolorystycznej po szczegółowe
+            rysunki mebli na zamówienie. Koordynujemy pracę wykonawców i kontrolujemy jakość
+            wykończenia.
+          </p>
+        </a>
+      </section>
+      <section aria-labelledby="process-title" class="content-section content-section--white section-animate">
+        <h2 class="content-section-title" id="process-title">Jak pracujemy</h2>
+        <ol class="process-grid" role="list">
+          <li class="process-step">
+            <p aria-hidden="true" class="process-num">01</p>
+            <h3 class="process-title">Spotkanie</h3>
+            <p class="process-desc">
+              Poznajemy Twoje potrzeby i oczekiwania. Analizujemy działkę i uwarunkowania miejscowe.
+            </p>
+          </li>
+          <li class="process-step">
+            <p aria-hidden="true" class="process-num process-num--powder">02</p>
+            <h3 class="process-title">Koncepcja</h3>
+            <p class="process-desc">
+              Tworzymy kilka wariantów koncepcyjnych. Wspólnie wybieramy najlepsze rozwiązanie.
+            </p>
+          </li>
+          <li class="process-step">
+            <p aria-hidden="true" class="process-num process-num--earth">03</p>
+            <h3 class="process-title">Projekt</h3>
+            <p class="process-desc">
+              Opracowujemy kompletną dokumentację projektową zgodną z obowiązującymi przepisami.
+            </p>
+          </li>
+          <li class="process-step">
+            <p aria-hidden="true" class="process-num process-num--olive">04</p>
+            <h3 class="process-title">Realizacja</h3>
+            <p class="process-desc">
+              Sprawujemy nadzór autorski i wspieramy Cię na każdym etapie budowy.
+            </p>
+          </li>
+        </ol>
+      </section>
+    </main>
+    <footer class="site-footer-brand">
+      <div class="footer-brand-top">
+        <nav aria-label="Menu w stopce" class="footer-brand-links">
+          <a href="realizacje.html">Realizacje</a>
+          <a aria-current="page" href="oferta.html">Oferta</a>
+          <a href="o-mnie.html">O mnie</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+        <span class="footer-brand-year">2026</span>
+      </div>
+
+      <div class="footer-brand-bottom">
+        <address class="footer-brand-address">
+          Qbatura — pracownia architektoniczna
+          <br />
+          ul. Architektów 12/3, 00-001 Warszawa
+          <br />
+          <a href="mailto:biuro@qbatura.pl">biuro@qbatura.pl</a>
+          ·
+          <a href="tel:+48123123123">+48 123 123 123</a>
+        </address>
+        <span class="footer-brand-policy">
+          <a href="#">Polityka prywatności</a>
+          –
+          <a href="#">Polityka ciasteczek</a>
+        </span>
+      </div>
+
+      <div aria-hidden="true" class="footer-brand-wordmark">
+        <span>Qbatura</span>
+      </div>
+    </footer>
+
+    <script src="assets/scripts.js"></script>
+  </body>
+</html>

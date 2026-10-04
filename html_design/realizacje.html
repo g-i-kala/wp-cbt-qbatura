@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Realizacje – Qbatura</title>
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="assets/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+    <!-- MOBILE OVERLAY MENU -->
+    <div aria-label="Menu" aria-modal="true" class="mobile-menu-overlay" id="mobile-menu" role="dialog">
+      <div class="mob-menu-top">
+        <a class="mob-menu-logo" href="index.html">Qbatura</a>
+        <button class="mob-menu-close js-menu-close" type="button">Zamknij</button>
+      </div>
+      <nav aria-label="Menu główne" class="mob-menu-nav">
+        <ul class="mob-menu-list">
+          <li class="mob-menu-item"><a aria-current="page" href="realizacje.html">Realizacje</a></li>
+          <li class="mob-menu-item"><a href="oferta.html">Oferta</a></li>
+          <li class="mob-menu-item"><a href="o-mnie.html">O mnie</a></li>
+          <li class="mob-menu-item"><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <header class="site-header">
+      <a class="logo" href="index.html">Qbatura</a>
+      <div class="header-right">
+        <button aria-controls="mobile-menu" aria-expanded="false" class="menu-link js-menu-open" type="button">
+          Menu
+        </button>
+        <nav aria-label="Wybór języka" class="lang">
+          <a aria-current="true" aria-label="Polski" href="#" hreflang="pl" lang="pl">PL</a>
+          <a aria-label="English" href="#" hreflang="en" lang="en">EN</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page-wrap" id="main">
+      <div class="page-hero page-hero--green-soft">
+        <h1 class="page-hero-title">Realizacje</h1>
+        <hr aria-hidden="true" class="page-hero-divider" />
+        <!-- Filtry: linki do kategorii. W HTML filtrowanie po ?kategoria= robi scripts.js; w WP — archiwa kategorii. -->
+        <nav aria-label="Kategorie realizacji" class="page-hero-meta page-hero-meta--filters">
+          <a aria-current="page" class="page-hero-category-filter js-filter-all" href="realizacje.html">Wszystkie</a>
+          <a class="page-hero-category-filter js-filter" data-category="przemyslowe" href="realizacje.html?kategoria=przemyslowe">Przemysłowe</a>
+          <a class="page-hero-category-filter js-filter" data-category="uzytecznosc-publiczna" href="realizacje.html?kategoria=uzytecznosc-publiczna">Użyteczność publiczna</a>
+          <a class="page-hero-category-filter js-filter" data-category="wielorodzinne" href="realizacje.html?kategoria=wielorodzinne">Wielorodzinne</a>
+          <a class="page-hero-category-filter js-filter" data-category="jednorodzinne" href="realizacje.html?kategoria=jednorodzinne">Jednorodzinne</a>
+          <a class="page-hero-category-filter js-filter" data-category="wnetrza" href="realizacje.html?kategoria=wnetrza">Wnętrza</a>
+        </nav>
+      </div>
+      <section aria-label="Lista realizacji" class="section-animate is-visible">
+        <!-- Miniatury (P3) i projekty są przykładowe — 9 kart z makiety, do podmiany. -->
+        <div class="projects-grid js-projects">
+          <a class="project-card" data-category="jednorodzinne" href="projekt.html">
+            <div aria-hidden="true" class="project-card-thumb bg-green-main"><span>Zdjęcie</span></div>
+            <p class="project-card-num">001</p>
+            <h2 class="project-card-name">Dom w Wilanowie</h2>
+            <p class="project-card-info">
+              Dom jednorodzinny, 320 m²
+              <br />
+              Warszawa, 2022
+            </p>
+            <span class="project-card-tag">Jednorodzinne</span>
+          </a>
+          <a class="project-card" data-category="przemyslowe" href="#">
+            <div aria-hidden="true" class="project-card-thumb bg-olive"><span>Zdjęcie</span></div>
+            <p class="project-card-num">002</p>
+            <h2 class="project-card-name">Hala produkcyjna BDX</h2>
+            <p class="project-card-info">
+              Obiekt przemysłowy, 4 800 m²
+              <br />
+              Wrocław, 2021
+            </p>
+            <span class="project-card-tag">Przemysłowe</span>
+          </a>
+          <a class="project-card" data-category="uzytecznosc-publiczna" href="#">
+            <div aria-hidden="true" class="project-card-thumb bg-earth"><span>Zdjęcie</span></div>
+            <p class="project-card-num">003</p>
+            <h2 class="project-card-name">Centrum kultury w Łodzi</h2>
+            <p class="project-card-info">
+              Użyteczność publiczna, 1 200 m²
+              <br />
+              Łódź, 2023
+            </p>
+            <span class="project-card-tag">Użyteczność publiczna</span>
+          </a>
+          <a class="project-card" data-category="wnetrza" href="#">
+            <div aria-hidden="true" class="project-card-thumb bg-powder"><span>Zdjęcie</span></div>
+            <p class="project-card-num">004</p>
+            <h2 class="project-card-name">Apartament na Mokotowie</h2>
+            <p class="project-card-info">
+              Wnętrze, 140 m²
+              <br />
+              Warszawa, 2023
+            </p>
+            <span class="project-card-tag">Wnętrza</span>
+          </a>
+          <a class="project-card" data-category="jednorodzinne" href="#">
+            <div aria-hidden="true" class="project-card-thumb bg-olive"><span>Zdjęcie</span></div>
+            <p class="project-card-num">005</p>
+            <h2 class="project-card-name">Dom nad Jeziorem Zegrzyńskim</h2>
+            <p class="project-card-info">
+              Dom letniskowy, 185 m²
+              <br />
+              Zegrze, 2022
+            </p>
+            <span class="project-card-tag">Jednorodzinne</span>
+          </a>
+          <a class="project-card" data-category="przemyslowe" href="#">
+            <div aria-hidden="true" class="project-card-thumb bg-olive"><span>Zdjęcie</span></div>
+            <p class="project-card-num">006</p>
+            <h2 class="project-card-name">Magazyn logistyczny T3</h2>
+            <p class="project-card-info">
+              Obiekt przemysłowy, 12 000 m²
+              <br />
+              Poznań, 2020
+            </p>
+            <span class="project-card-tag">Przemysłowe</span>
+          </a>
+          <a class="project-card" data-category="uzytecznosc-publiczna" href="#">
+            <div aria-hidden="true" class="project-card-thumb bg-earth"><span>Zdjęcie</span></div>
+            <p class="project-card-num">007</p>
+            <h2 class="project-card-name">Przedszkole Krasnoludek</h2>
+            <p class="project-card-info">
+              Użyteczność publiczna, 680 m²
+              <br />
+              Gdańsk, 2021
+            </p>
+            <span class="project-card-tag">Użyteczność publiczna</span>
+          </a>
+          <a class="project-card" data-category="wnetrza" href="#">
+            <div aria-hidden="true" class="project-card-thumb bg-powder"><span>Zdjęcie</span></div>
+            <p class="project-card-num">008</p>
+            <h2 class="project-card-name">Biuro firmy ARKO</h2>
+            <p class="project-card-info">
+              Wnętrze biurowe, 360 m²
+              <br />
+              Kraków, 2024
+            </p>
+            <span class="project-card-tag">Wnętrza</span>
+          </a>
+          <a class="project-card" data-category="jednorodzinne" href="#">
+            <div aria-hidden="true" class="project-card-thumb bg-green-main"><span>Zdjęcie</span></div>
+            <p class="project-card-num">009</p>
+            <h2 class="project-card-name">Dom w Konstancinie</h2>
+            <p class="project-card-info">
+              Dom jednorodzinny, 410 m²
+              <br />
+              Konstancin-Jeziorna, 2024
+            </p>
+            <span class="project-card-tag">Jednorodzinne</span>
+          </a>
+        </div>
+        <p class="projects-empty js-projects-empty" hidden>Brak realizacji w tej kategorii.</p>
+      </section>
+    </main>
+    <footer class="site-footer-brand">
+      <div class="footer-brand-top">
+        <nav aria-label="Menu w stopce" class="footer-brand-links">
+          <a aria-current="page" href="realizacje.html">Realizacje</a>
+          <a href="oferta.html">Oferta</a>
+          <a href="o-mnie.html">O mnie</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+        <span class="footer-brand-year">2026</span>
+      </div>
+
+      <div class="footer-brand-bottom">
+        <address class="footer-brand-address">
+          Qbatura — pracownia architektoniczna
+          <br />
+          ul. Architektów 12/3, 00-001 Warszawa
+          <br />
+          <a href="mailto:biuro@qbatura.pl">biuro@qbatura.pl</a>
+          ·
+          <a href="tel:+48123123123">+48 123 123 123</a>
+        </address>
+        <span class="footer-brand-policy">
+          <a href="#">Polityka prywatności</a>
+          –
+          <a href="#">Polityka ciasteczek</a>
+        </span>
+      </div>
+
+      <div aria-hidden="true" class="footer-brand-wordmark">
+        <span>Qbatura</span>
+      </div>
+    </footer>
+
+    <script src="assets/scripts.js"></script>
+  </body>
+</html>

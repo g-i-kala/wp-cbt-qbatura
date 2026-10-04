@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>O mnie – Qbatura</title>
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="assets/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+    <!-- MOBILE OVERLAY MENU -->
+    <div aria-label="Menu" aria-modal="true" class="mobile-menu-overlay" id="mobile-menu" role="dialog">
+      <div class="mob-menu-top">
+        <a class="mob-menu-logo" href="index.html">Qbatura</a>
+        <button class="mob-menu-close js-menu-close" type="button">Zamknij</button>
+      </div>
+      <nav aria-label="Menu główne" class="mob-menu-nav">
+        <ul class="mob-menu-list">
+          <li class="mob-menu-item"><a href="realizacje.html">Realizacje</a></li>
+          <li class="mob-menu-item"><a href="oferta.html">Oferta</a></li>
+          <li class="mob-menu-item"><a aria-current="page" href="o-mnie.html">O mnie</a></li>
+          <li class="mob-menu-item"><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <header class="site-header">
+      <a class="logo" href="index.html">Qbatura</a>
+      <div class="header-right">
+        <button aria-controls="mobile-menu" aria-expanded="false" class="menu-link js-menu-open" type="button">
+          Menu
+        </button>
+        <nav aria-label="Wybór języka" class="lang">
+          <a aria-current="true" aria-label="Polski" href="#" hreflang="pl" lang="pl">PL</a>
+          <a aria-label="English" href="#" hreflang="en" lang="en">EN</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page-wrap" id="main">
+      <div class="page-hero page-hero--green-main">
+        <h1 class="page-hero-title">O mnie</h1>
+        <hr aria-hidden="true" class="page-hero-divider" />
+        <div class="page-hero-meta">
+          <span class="page-hero-label">Pracownia architektoniczna</span>
+          <p class="page-hero-text">
+            Qbatura to pracownia architektoniczna założona w 2006 roku przez zespół architektów
+            zafascynowanych relacją między przestrzenią a człowiekiem. Projektujemy obiekty, które
+            odpowiadają na potrzeby użytkowników, szanując jednocześnie kontekst miejsca i
+            środowisko naturalne.
+          </p>
+        </div>
+      </div>
+      <section
+        aria-labelledby="history-title"
+        class="content-section section-animate is-visible section-aboutme"
+      >
+        <h2 class="content-section-title" id="history-title">Historia pracowni</h2>
+        <div class="about-grid">
+          <div>
+            <p class="text-body text-muted">
+              Pracownia powstała z przekonania, że dobra architektura jest wynikiem dialogu — między
+              inwestorem a architektem, między budynkiem a jego otoczeniem, między formą a funkcją.
+              Od samego początku stawiamy na rzetelność, terminowość i transparentną komunikację.
+            </p>
+            <p class="text-body text-muted">
+              Przez ponad osiemnaście lat zrealizowaliśmy blisko sto projektów na terenie całej
+              Polski. Każde zlecenie traktujemy indywidualnie — nie stosujemy gotowych szablonów,
+              lecz szukamy rozwiązań dostosowanych do konkretnej działki, budżetu i oczekiwań
+              Klienta.
+            </p>
+          </div>
+          <div class="about-aside">
+            <!-- Zdjęcie klientki — opcjonalne (E9). Jeśli nie będzie zdjęcia, usuwamy ten blok. -->
+            <div aria-hidden="true" class="about-photo bg-olive"><span>Zdjęcie</span></div>
+            <dl class="stat-list">
+            <div class="stat">
+              <dt class="stat-label">Rok założenia</dt>
+              <dd class="stat-num">2006</dd>
+            </div>
+            <div class="stat stat--powder">
+              <dt class="stat-label">Zrealizowanych projektów</dt>
+              <dd class="stat-num">~100</dd>
+            </div>
+            <div class="stat stat--earth">
+              <dt class="stat-label">Osób w zespole</dt>
+              <dd class="stat-num">12</dd>
+            </div>
+          </dl>
+          </div>
+        </div>
+      </section>
+      <section
+        aria-labelledby="areas-title"
+        class="content-section content-section--green-soft section-animate"
+      >
+        <h2 class="content-section-title" id="areas-title">Obszary działalności</h2>
+        <div>
+          <p class="tree-root">Qbatura / Specjalizacje</p>
+          <div class="tree-branches">
+            <div class="tree-node">
+              <h3 class="tree-node-label">Domy jednorodzinne</h3>
+              <p class="tree-node-sub">Projekty indywidualne i adaptacje</p>
+            </div>
+            <div class="tree-node">
+              <h3 class="tree-node-label">Obiekty przemysłowe</h3>
+              <p class="tree-node-sub">Hale produkcyjne, magazyny, zakłady</p>
+            </div>
+            <div class="tree-node">
+              <h3 class="tree-node-label">Użyteczność publiczna</h3>
+              <p class="tree-node-sub">Szkoły, biura, obiekty kultury</p>
+            </div>
+            <div class="tree-node">
+              <h3 class="tree-node-label">Wnętrza</h3>
+              <p class="tree-node-sub">Projekty i nadzór wykończenia</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer-brand">
+      <div class="footer-brand-top">
+        <nav aria-label="Menu w stopce" class="footer-brand-links">
+          <a href="realizacje.html">Realizacje</a>
+          <a href="oferta.html">Oferta</a>
+          <a aria-current="page" href="o-mnie.html">O mnie</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+        <span class="footer-brand-year">2026</span>
+      </div>
+
+      <div class="footer-brand-bottom">
+        <address class="footer-brand-address">
+          Qbatura — pracownia architektoniczna
+          <br />
+          ul. Architektów 12/3, 00-001 Warszawa
+          <br />
+          <a href="mailto:biuro@qbatura.pl">biuro@qbatura.pl</a>
+          ·
+          <a href="tel:+48123123123">+48 123 123 123</a>
+        </address>
+        <span class="footer-brand-policy">
+          <a href="#">Polityka prywatności</a>
+          –
+          <a href="#">Polityka ciasteczek</a>
+        </span>
+      </div>
+
+      <div aria-hidden="true" class="footer-brand-wordmark">
+        <span>Qbatura</span>
+      </div>
+    </footer>
+
+    <script src="assets/scripts.js"></script>
+  </body>
+</html>

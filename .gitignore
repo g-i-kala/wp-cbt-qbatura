@@ -1,0 +1,24 @@
+# System / edytory
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+.env
+
+# WordPress — wersjonujemy tylko własny kod.
+# Wtyczki zewnętrzne (ACF, Polylang, WS Form, Yoast…) instalowane z panelu na każdym środowisku.
+/wp-content/*
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/qbatura/
+!/wp-content/plugins/
+/wp-content/plugins/*
+!/wp-content/plugins/qbatura-core/
+
+# Zależności i buildy
+node_modules/
+
+# Lokalne / wrażliwe — nie trafiają do repo (repo jest publiczne)
+/docs/
+docker-compose.yml

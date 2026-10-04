@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Kontakt – Qbatura</title>
+    <link href="assets/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- MOBILE OVERLAY MENU -->
+    <div aria-modal="true" class="mobile-menu-overlay" id="mobile-menu" role="dialog">
+      <div class="mob-menu-top">
+        <span class="mob-menu-logo">Qbatura</span>
+        <span class="mob-menu-close js-menu-close">Zamknij</span>
+      </div>
+      <nav class="mob-menu-nav">
+        <div class="mob-menu-item"><a href="realizacje.html">Realizacje</a></div>
+        <div class="mob-menu-item"><a href="oferta.html">Oferta</a></div>
+        <div class="mob-menu-item"><a href="o-mnie.html">O mnie</a></div>
+        <div class="mob-menu-item"><a href="kontakt.html">Kontakt</a></div>
+      </nav>
+    </div>
+    <header class="site-header">
+      <a class="logo" href="index.html">Qbatura</a>
+      <div class="header-right">
+        <span class="menu-link js-menu-open">Menu</span>
+        <div class="lang">
+          <a href="#">[EN]</a>
+          <a href="#">[PL]</a>
+        </div>
+      </div>
+    </header>
+    <div class="page-wrap">
+      <div class="page-hero section-contact">
+        <h1 class="page-hero-title">Kontakt</h1>
+        <hr class="page-hero-divider" />
+        <div class="page-hero-meta">
+          <p class="page-hero-text">
+            Chętnie odpowiemy na wszystkie pytania dotyczące naszej oferty. Zapraszamy do kontaktu
+            telefonicznego, mailowego lub bezpośredniego w naszej pracowni — po wcześniejszym
+            umówieniu terminu spotkania.
+          </p>
+        </div>
+      </div>
+      <section class="kontakt-grid section-animate is-visible">
+        <div class="kontakt-col">
+          <p class="kontakt-col-title">[Dane kontaktowe]</p>
+          <div class="kontakt-item">
+            <p class="kontakt-item-label">Adres</p>
+            <p class="kontakt-item-value">
+              ul. Architektów 12/3
+              <br />
+              00-001 Warszawa
+            </p>
+          </div>
+          <div class="kontakt-item">
+            <p class="kontakt-item-label">Telefon</p>
+            <p class="kontakt-item-value">+48 22 123 45 67</p>
+          </div>
+          <div class="kontakt-item">
+            <p class="kontakt-item-label">E-mail</p>
+            <p class="kontakt-item-value">biuro@qbatura.pl</p>
+          </div>
+          <div class="kontakt-item">
+            <p class="kontakt-item-label">Godziny pracy</p>
+            <p class="kontakt-item-value">Pn – Pt: 9:00 – 17:00</p>
+          </div>
+          <div class="kontakt-item">
+            <p class="kontakt-item-label">NIP</p>
+            <p class="kontakt-item-value">123-456-78-90</p>
+          </div>
+        </div>
+        <div class="kontakt-col" style="background: var(--c-green-soft)">
+          <p class="kontakt-col-title">[Formularz kontaktowy]</p>
+          <form class="kontakt-form" onsubmit="return false;">
+            <div class="form-group">
+              <label class="form-label" for="name">Imię i nazwisko</label>
+              <input
+                class="form-input"
+                id="name"
+                name="name"
+                placeholder="Jan Kowalski"
+                type="text"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">E-mail</label>
+              <input
+                class="form-input"
+                id="email"
+                name="email"
+                placeholder="jan@example.com"
+                type="email"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Telefon (opcjonalnie)</label>
+              <input
+                class="form-input"
+                id="phone"
+                name="phone"
+                placeholder="+48 000 000 000"
+                type="tel"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Wiadomość</label>
+              <textarea
+                class="form-textarea"
+                id="message"
+                name="message"
+                placeholder="Opisz swój projekt lub pytanie..."
+              ></textarea>
+            </div>
+            <button class="form-submit" type="submit">Wyślij wiadomość</button>
+          </form>
+        </div>
+      </section>
+      <section
+        class="section-animate"
+        style="
+          height: 280px;
+          background: var(--c-green-soft);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-top: var(--line-soft);
+        "
+      >
+        <div style="text-align: center">
+          <p
+            style="
+              font-size: 0.58rem;
+              font-weight: 500;
+              letter-spacing: 0.22em;
+              text-transform: uppercase;
+              color: var(--c-text-muted);
+              margin-bottom: 0.6rem;
+            "
+          >
+            [Mapa dojazdu]
+          </p>
+          <p style="font-size: 0.875rem; color: var(--c-text-muted)">
+            ul. Architektów 12/3, Warszawa
+          </p>
+        </div>
+      </section>
+    </div>
+    <footer class="site-footer-brand">
+      <div class="footer-brand-top">
+        <div class="footer-brand-links">
+          <a href="realizacje.html">Realizacje</a>
+          <a href="oferta.html">Oferta</a>
+          <a href="o-mnie.html">O mnie</a>
+          <a href="kontakt.html">Kontakt</a>
+        </div>
+        <span class="footer-brand-year">2026</span>
+      </div>
+
+      <div class="footer-brand-bottom">
+        <span class="footer-brand-address">
+          Qbatura — pracownia architektoniczna
+          <br />
+          ul. Architektów 12/3, 00-001 Warszawa
+          <br />
+          biuro@qbatura.pl · +48 123 123 123
+        </span>
+        <span class="footer-brand-policy">
+          <a href="#">Polityka prywatności</a>
+          –
+          <a href="#">Polityka ciasteczek</a>
+        </span>
+      </div>
+
+      <div class="footer-brand-wordmark">
+        <span>Qbatura</span>
+      </div>
+    </footer>
+
+    <script src="assets/scripts.js"></script>
+  </body>
+</html>

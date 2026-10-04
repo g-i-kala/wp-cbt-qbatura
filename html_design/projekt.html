@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dom Jednorodzinny w Szczecinie – Qbatura</title>
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="assets/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+    <!-- MOBILE OVERLAY MENU -->
+    <div aria-label="Menu" aria-modal="true" class="mobile-menu-overlay" id="mobile-menu" role="dialog">
+      <div class="mob-menu-top">
+        <a class="mob-menu-logo" href="index.html">Qbatura</a>
+        <button class="mob-menu-close js-menu-close" type="button">Zamknij</button>
+      </div>
+      <nav aria-label="Menu główne" class="mob-menu-nav">
+        <ul class="mob-menu-list">
+          <li class="mob-menu-item"><a href="realizacje.html">Realizacje</a></li>
+          <li class="mob-menu-item"><a href="oferta.html">Oferta</a></li>
+          <li class="mob-menu-item"><a href="o-mnie.html">O mnie</a></li>
+          <li class="mob-menu-item"><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <header class="site-header">
+      <a class="logo" href="index.html">Qbatura</a>
+      <div class="header-right">
+        <button aria-controls="mobile-menu" aria-expanded="false" class="menu-link js-menu-open" type="button">
+          Menu
+        </button>
+        <nav aria-label="Wybór języka" class="lang">
+          <a aria-current="true" aria-label="Polski" href="#" hreflang="pl" lang="pl">PL</a>
+          <a aria-label="English" href="#" hreflang="en" lang="en">EN</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page-wrap" id="main">
+      <!-- 1. HERO -->
+      <div class="page-hero page-hero--green-soft">
+        <p class="projekt-back">
+          <a href="realizacje.html">← Realizacje</a>
+        </p>
+        <!-- 2. MAIN IMAGE -->
+        <div class="projekt-image-placeholder section-animate">
+          <span>Obraz projektu</span>
+        </div>
+
+        <div class="projekt-hero-meta">
+          <div>
+            <h1 class="projekt-title">Dom Jednorodzinny w Szczecinie</h1>
+            <!-- Jedna lista parametrów (P8). W WP puste pola nie będą wyświetlane. -->
+            <ul class="projekt-meta-list">
+              <li>
+                <span class="projekt-meta-key">Lokalizacja</span>
+                <span class="projekt-meta-val">Szczecin, Polska</span>
+              </li>
+              <li>
+                <span class="projekt-meta-key">Rok</span>
+                <span class="projekt-meta-val">2023</span>
+              </li>
+              <li>
+                <span class="projekt-meta-key">Typ</span>
+                <span class="projekt-meta-val">Dom jednorodzinny</span>
+              </li>
+              <li>
+                <span class="projekt-meta-key">Zakres</span>
+                <span class="projekt-meta-val">Projekt + nadzór</span>
+              </li>
+              <li>
+                <span class="projekt-meta-key">Powierzchnia użytkowa</span>
+                <span class="projekt-meta-val">320 m²</span>
+              </li>
+              <li>
+                <span class="projekt-meta-key">Powierzchnia działki</span>
+                <span class="projekt-meta-val">1 200 m²</span>
+              </li>
+              <li>
+                <span class="projekt-meta-key">Liczba kondygnacji</span>
+                <span class="projekt-meta-val">1 + poddasze</span>
+              </li>
+              <li>
+                <span class="projekt-meta-key">Inwestor</span>
+                <span class="projekt-meta-val">Klient prywatny</span>
+              </li>
+              <li>
+                <span class="projekt-meta-key">Status</span>
+                <span class="projekt-meta-val">Zrealizowany</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-body">
+              Projekt domu jednorodzinnego dla czteroosobowej rodziny na działce o powierzchni 1 200
+              m² w spokojnej dzielnicy Szczecina. Zadaniem projektowym było stworzenie przestrzeni,
+              która łączy otwartość i nowoczesność z ciepłem domowego wnętrza.
+            </p>
+            <p class="text-body text-muted">
+              Bryła domu jest zwarta i prosta — parterowy budynek z poddaszem użytkowym, przykryty
+              dwuspadowym dachem. Elewacja łączy tynk mineralny w odcieniu szarobeżowym z
+              drewnianymi akcentami na werandzie i wejściu. Duże przeszklenia od strony ogrodu
+              wpuszczają naturalne światło do salonu i jadalni.
+            </p>
+            <p class="text-body text-muted">
+              Szczególnym wyzwaniem projektu była konieczność pogodzenia oczekiwań inwestora
+              dotyczących dużej otwartości wnętrz z wymogami energooszczędności. Zastosowano system
+              rekuperacji, ogrzewanie podłogowe zasilane pompą ciepła oraz panele fotowoltaiczne na
+              połaci dachowej.
+            </p>
+            <p class="text-body text-muted">
+              Wnętrza zaprojektowała pracownia we współpracy z inwestorem. Przeważają naturalne
+              materiały: dąb olejowany na podłogach, kamień na blatach kuchennych oraz tynki
+              wapienne w salonie. Paleta barw pozostaje stonowana — szarości, biele i akcenty w
+              kolorze terakoty.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. GALLERY -->
+      <section aria-label="Galeria projektu" class="gallery-section content-section--white section-animate">
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="gallery-item-bg bg-green-main"></div>
+            <span>Elewacja frontowa</span>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-item-bg bg-olive"></div>
+            <span>Salon</span>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-item-bg bg-green-soft"></div>
+            <span>Kuchnia</span>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-item-bg bg-powder"></div>
+            <span>Ogród</span>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-item-bg bg-earth"></div>
+            <span>Sypialnia główna</span>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-item-bg bg-olive"></div>
+            <span>Łazienka</span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer-brand">
+      <div class="footer-brand-top">
+        <nav aria-label="Menu w stopce" class="footer-brand-links">
+          <a href="realizacje.html">Realizacje</a>
+          <a href="oferta.html">Oferta</a>
+          <a href="o-mnie.html">O mnie</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+        <span class="footer-brand-year">2026</span>
+      </div>
+
+      <div class="footer-brand-bottom">
+        <address class="footer-brand-address">
+          Qbatura — pracownia architektoniczna
+          <br />
+          ul. Architektów 12/3, 00-001 Warszawa
+          <br />
+          <a href="mailto:biuro@qbatura.pl">biuro@qbatura.pl</a>
+          ·
+          <a href="tel:+48123123123">+48 123 123 123</a>
+        </address>
+        <span class="footer-brand-policy">
+          <a href="#">Polityka prywatności</a>
+          –
+          <a href="#">Polityka ciasteczek</a>
+        </span>
+      </div>
+
+      <div aria-hidden="true" class="footer-brand-wordmark">
+        <span>Qbatura</span>
+      </div>
+    </footer>
+
+    <script src="assets/scripts.js"></script>
+  </body>
+</html>

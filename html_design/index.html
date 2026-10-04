@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Qbatura – Pracownia Architektoniczna</title>
+    <meta
+      content="Qbatura — pracownia architektoniczna projektująca domy, obiekty przemysłowe i wnętrza od 2006 roku."
+      name="description"
+    />
+    <script>
+      document.documentElement.classList.add('js');
+      // Splash tylko przy pierwszej wizycie (S1). Podgląd splasha ponownie: index.html?splash
+      try {
+        if (localStorage.getItem('qbatura-entered') && !/[?&]splash\b/.test(location.search)) {
+          document.documentElement.classList.add('is-entered');
+        }
+      } catch (e) {}
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="assets/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <!-- Tekst dla wyszukiwarek i czytników ekranu (S2) — treść do potwierdzenia przez klientkę. -->
+      <p class="screen-reader-text">
+        Qbatura — pracownia projektowa. Projekty domów jednorodzinnych i wielorodzinnych,
+        obiektów przemysłowych, budynków użyteczności publicznej oraz wnętrz.
+      </p>
+      <!-- SCREEN 1 -->
+      <section aria-label="Powitanie" id="screen-1">
+        <div class="s1-top">
+          <nav aria-label="Wybór języka" class="s1-lang">
+            <a aria-current="true" aria-label="Polski" href="#" hreflang="pl" lang="pl">PL</a>
+            <a aria-label="English" href="#" hreflang="en" lang="en">EN</a>
+          </nav>
+          <p class="s1-description">PRACOWNIA PROJEKTOWA QBATURA</p>
+        </div>
+        <div class="s1-center">
+          <a class="s1-enter" href="#screen-2" id="enter-btn">Wejście</a>
+        </div>
+        <div class="s1-brand">
+          <h1>Qbatura</h1>
+        </div>
+      </section>
+      <!-- SCREEN 2 -->
+      <section aria-label="Menu" id="screen-2">
+        <div class="s2-top">
+          <span aria-hidden="true" class="s2-logo">Qbatura</span>
+          <nav aria-label="Wybór języka" class="s2-lang">
+            <a aria-current="true" aria-label="Polski" href="#" hreflang="pl" lang="pl">PL</a>
+            <a aria-label="English" href="#" hreflang="en" lang="en">EN</a>
+          </nav>
+        </div>
+        <nav aria-label="Menu główne" class="s2-menu">
+          <ul class="s2-menu-list">
+            <li class="s2-menu-item"><a href="realizacje.html">Realizacje</a></li>
+            <li class="s2-menu-item"><a href="oferta.html">Oferta</a></li>
+            <li class="s2-menu-item"><a href="o-mnie.html">O mnie</a></li>
+            <li class="s2-menu-item"><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </nav>
+      </section>
+    </main>
+    <script src="assets/scripts.js"></script>
+  </body>
+</html>
