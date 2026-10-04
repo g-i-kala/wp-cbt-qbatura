@@ -1,0 +1,673 @@
+/*
+ * Qbatura — układ: nagłówek, nakładka menu, stopka, hero stron, lista i strona realizacji.
+ * Źródło: html_design/assets/styles.css (nazwy klas z prefiksem qbatura-).
+ */
+
+/* Odstępy między blokami najwyższego poziomu w szablonach — sekcje stykają się jak w makiecie. */
+.wp-site-blocks > * + *,
+.qbatura-main > * + * {
+	margin-block-start: 0;
+}
+
+/* ─── NAGŁÓWEK ─── */
+
+.qbatura-header {
+	position: fixed;
+	top: var(--qbatura-admin-bar);
+	left: 0;
+	right: 0;
+	z-index: 200;
+	height: var(--qbatura-header-h);
+	padding: 0 var(--qbatura-gutter);
+	border-bottom: var(--line-soft);
+	background: var(--c-white);
+}
+
+/* Miejsce na stały nagłówek — tylko w szablonach z nagłówkiem. */
+.qbatura-main {
+	padding-top: var(--qbatura-header-h);
+}
+
+/* Strona główna nie ma nagłówka — splash zajmuje cały ekran. */
+.qbatura-main--front {
+	padding-top: 0;
+}
+
+.qbatura-logo {
+	margin: 0;
+}
+
+.qbatura-logo a {
+	text-decoration: none;
+}
+
+.qbatura-header__right {
+	gap: 2rem;
+}
+
+.qbatura-header .qbatura-lang {
+	color: var(--c-text-muted);
+}
+
+.qbatura-header .qbatura-lang a:hover,
+.qbatura-header .qbatura-lang a[aria-current] {
+	color: var(--c-text);
+}
+
+.qbatura-menu-toggle,
+.qbatura-menu-close {
+	font-size: var(--fs-xs);
+	font-weight: 600;
+	letter-spacing: 0.18em;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.qbatura-menu-toggle:hover {
+	opacity: 0.6;
+}
+
+/* ─── NAKŁADKA MENU ─── */
+/* Jedyna nawigacja w nagłówku — działa na wszystkich szerokościach. */
+
+.qbatura-menu {
+	position: fixed;
+	inset: var(--qbatura-admin-bar) 0 0;
+	z-index: 300;
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition:
+		opacity 0.35s ease,
+		visibility 0s linear 0.35s;
+}
+
+.qbatura-menu.is-open {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+	transition:
+		opacity 0.35s ease,
+		visibility 0s linear 0s;
+}
+
+/* Treść strony nie przewija się pod otwartą nakładką. */
+.qbatura-menu-is-open {
+	overflow: hidden;
+}
+
+.qbatura-menu__top {
+	flex-shrink: 0;
+	height: var(--qbatura-header-h);
+	padding: 0 var(--qbatura-gutter);
+	border-bottom: var(--line);
+}
+
+.qbatura-menu > * {
+	margin-block: 0;
+}
+
+/* ─── WIELKIE MENU (nakładka i ekran menu strony głównej) ─── */
+/*
+ * Najdłuższa pozycja „REALIZACJE” (Inter ExtraBold) ma ok. 6.05em, a po hoverze ok. 6.35em.
+ * Dzielnik 6.6 mieści ją również w stanie hover; na szerokich ekranach limit 10rem.
+ */
+
+.qbatura-giant-nav.wp-block-navigation {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 0;
+}
+
+.qbatura-giant-nav .wp-block-navigation__container,
+.qbatura-giant-nav .wp-block-page-list {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 0;
+	width: 100%;
+}
+
+.qbatura-giant-nav .wp-block-navigation-item {
+	flex: 1;
+	min-height: 4.5rem;
+	display: flex;
+	border-bottom: var(--line);
+	overflow: hidden;
+	transition: background 0.2s ease;
+}
+
+.qbatura-giant-nav .wp-block-navigation-item:last-child {
+	border-bottom: none;
+}
+
+.qbatura-giant-nav .wp-block-navigation-item:hover {
+	background: rgba(0, 0, 0, 0.04);
+}
+
+/* Link wypełnia cały wiersz — klikalny jest cały pas, nie tylko tekst. */
+.qbatura-giant-nav .wp-block-navigation-item__content {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	padding: 0 var(--qbatura-gutter);
+	font-size: clamp(2.2rem, calc((100vw - 2 * var(--qbatura-gutter)) / 6.6), 10rem);
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	line-height: 1;
+	text-transform: uppercase;
+	transition: letter-spacing 0.3s ease;
+}
+
+.qbatura-giant-nav .wp-block-navigation-item:hover .wp-block-navigation-item__content {
+	letter-spacing: 0.01em;
+}
+
+.qbatura-giant-nav .wp-block-navigation-item__content:focus-visible {
+	outline-offset: -6px;
+}
+
+/* Niski ekran (telefon poziomo) — pozycje menu nie zgniatają się. */
+@media (max-height: 480px) {
+	.qbatura-giant-nav .wp-block-navigation-item {
+		min-height: 3.5rem;
+	}
+}
+
+/* ─── HERO STRON ─── */
+
+.qbatura-hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	border-bottom: var(--line);
+}
+
+.qbatura-hero.qbatura-hero > * {
+	margin-block: 0;
+}
+
+.qbatura-hero__title {
+	font-size: clamp(3rem, 7vw, 8rem);
+	font-weight: 900;
+	letter-spacing: -0.025em;
+	line-height: 0.88;
+	text-transform: uppercase;
+	padding: 2.5rem var(--qbatura-gutter);
+	overflow-wrap: break-word;
+}
+
+/* Hero bez dalszej treści (strony proste, 404) — tylko tytuł nad grubą linią. */
+
+.qbatura-hero__meta {
+	display: flex;
+	align-items: flex-start;
+	gap: 4rem;
+	padding: 2.5rem var(--qbatura-gutter);
+}
+
+.qbatura-hero__text {
+	font-size: 0.875rem;
+	line-height: 1.8;
+	max-width: 52ch;
+}
+
+/* Filtry kategorii — zawijają się zamiast rozpychać stronę. */
+
+.qbatura-filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem 4rem;
+	padding: 2.5rem var(--qbatura-gutter);
+}
+
+.qbatura-filters a {
+	font-size: var(--fs-2xs);
+	font-weight: 500;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	color: var(--c-text-muted);
+	white-space: nowrap;
+	min-width: 160px;
+	padding-top: 0.1rem;
+	transition: letter-spacing 0.3s ease;
+}
+
+.qbatura-filters a::before {
+	content: '[';
+}
+
+.qbatura-filters a::after {
+	content: ']';
+}
+
+.qbatura-filters a:hover,
+.qbatura-filters a[aria-current] {
+	letter-spacing: 0.18em;
+}
+
+.qbatura-filters a[aria-current] {
+	color: var(--c-text);
+}
+
+/* ─── TREŚĆ STRON PROSTYCH ─── */
+
+.qbatura-page-content {
+	padding-block: 4rem;
+}
+
+/* ─── LISTA REALIZACJI (Query Loop) ─── */
+
+.qbatura-cards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	counter-reset: qbatura-card;
+}
+
+.qbatura-cards.qbatura-cards > li {
+	margin: 0;
+}
+
+.qbatura-card {
+	--card-pad: 2.5rem;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: var(--card-pad);
+	border-right: 1px solid var(--c-border);
+	border-bottom: 1px solid var(--c-border);
+	background: var(--c-white);
+	counter-increment: qbatura-card;
+	transition:
+		transform 0.22s ease,
+		background 0.22s ease,
+		box-shadow 0.22s ease;
+}
+
+.qbatura-card > * {
+	margin-block: 0;
+}
+
+.qbatura-cards > li:nth-child(3n) .qbatura-card {
+	border-right: none;
+}
+
+.qbatura-card:hover,
+.qbatura-card:focus-within {
+	background: var(--c-green-soft);
+	z-index: 1;
+}
+
+@media (hover: hover) {
+	.qbatura-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+	}
+}
+
+/* Numer z kolejności na liście (P4: „na razie tak jak jest”) — 001, 002… */
+.qbatura-card::before {
+	content: '0' counter(qbatura-card, decimal-leading-zero);
+	order: 1;
+	margin-bottom: 1.5rem;
+	font-size: var(--fs-2xs);
+	font-weight: 500;
+	letter-spacing: 0.12em;
+	color: var(--c-text-muted);
+}
+
+/* Miniatura na pełną szerokość kafla — wychodzi poza padding karty (P3). */
+.qbatura-card__thumb {
+	order: 0;
+	aspect-ratio: 4 / 3;
+	margin: calc(-1 * var(--card-pad)) calc(-1 * var(--card-pad)) 1.5rem !important;
+	background: var(--c-olive-dark);
+	transition: opacity 0.22s ease;
+}
+
+.qbatura-card__thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.qbatura-card:hover .qbatura-card__thumb {
+	opacity: 0.85;
+}
+
+.qbatura-card > :not(.qbatura-card__thumb) {
+	order: 2;
+}
+
+.qbatura-card__title {
+	margin-bottom: 0.4rem !important;
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	line-height: 1.3;
+	text-transform: uppercase;
+}
+
+/* Cała karta klikalna — link tytułu rozciągnięty na kafel. */
+.qbatura-card__title a::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+}
+
+.qbatura-card__title a:focus-visible {
+	outline: none;
+}
+
+.qbatura-card__title a:focus-visible::after {
+	outline: 2px solid var(--c-text);
+	outline-offset: -4px;
+}
+
+.qbatura-card .wp-block-qbatura-project-meta {
+	font-size: 0.75rem;
+	line-height: 1.6;
+	color: var(--c-text-muted);
+}
+
+.qbatura-card__tag {
+	align-self: flex-start;
+	margin-top: 1rem !important;
+	font-size: var(--fs-2xs);
+	font-weight: 500;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--c-text-muted);
+}
+
+/* Tag kategorii jest linkiem nad rozciągniętym linkiem karty. */
+.qbatura-card__tag a {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	padding: 0.2rem 0.5rem;
+	border: 1px solid var(--c-border);
+}
+
+.qbatura-card__tag a:hover {
+	color: var(--c-text);
+}
+
+.qbatura-card__tag .wp-block-post-terms__separator {
+	display: none;
+}
+
+.qbatura-cards-empty {
+	padding: 4rem var(--qbatura-gutter);
+	font-size: 0.875rem;
+	color: var(--c-text-muted);
+}
+
+@media (max-width: 1024px) {
+	.qbatura-cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.qbatura-cards > li:nth-child(3n) .qbatura-card {
+		border-right: 1px solid var(--c-border);
+	}
+
+	.qbatura-cards > li:nth-child(2n) .qbatura-card {
+		border-right: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.qbatura-card {
+		--card-pad: 1.5rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.qbatura-cards {
+		grid-template-columns: 1fr;
+	}
+
+	.qbatura-cards > li .qbatura-card,
+	.qbatura-cards > li:nth-child(3n) .qbatura-card {
+		border-right: none;
+	}
+}
+
+/* ─── STRONA REALIZACJI ─── */
+
+.qbatura-back {
+	padding: 1.5rem var(--qbatura-gutter) 0;
+	margin-bottom: 1rem !important;
+	font-size: var(--fs-2xs);
+	font-weight: 500;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--c-text-muted);
+}
+
+.qbatura-back a:hover {
+	color: var(--c-text);
+}
+
+.qbatura-project-image {
+	width: 100%;
+	aspect-ratio: 16 / 7;
+	background: var(--c-olive-dark);
+	border-bottom: var(--line);
+}
+
+.qbatura-project-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.qbatura-project-meta {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 3rem;
+	align-items: start;
+	padding: 2.5rem var(--qbatura-gutter);
+}
+
+.qbatura-project-meta > * {
+	margin-block: 0;
+	min-width: 0;
+}
+
+/* Tytuł realizacji wygląda jak etykieta [ … ] — to nadal h1 strony. */
+.qbatura-project-title {
+	margin-bottom: 1.25rem !important;
+	font-size: var(--fs-2xs);
+	font-weight: 500;
+	letter-spacing: 0.16em;
+	line-height: 1.6;
+	text-transform: uppercase;
+	color: var(--c-text-muted);
+}
+
+.qbatura-project-title::before {
+	content: '[';
+}
+
+.qbatura-project-title::after {
+	content: ']';
+}
+
+.qbatura-content-text > p:not(:first-child) {
+	color: var(--c-text-muted);
+}
+
+.qbatura-content-text > * + * {
+	margin-block-start: 1.25rem;
+}
+
+/* Galeria pod hero — hero ma już grubą linię u dołu. */
+.qbatura-content-gallery > .wp-block-gallery {
+	margin: 0;
+}
+
+@media (max-width: 1024px) {
+	.qbatura-project-meta {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.qbatura-back {
+		padding-top: 1.25rem;
+	}
+
+	.qbatura-project-meta {
+		padding: 2rem var(--qbatura-gutter) 2.5rem;
+	}
+}
+
+/* ─── STOPKA ─── */
+
+.qbatura-footer {
+	border-top: var(--line);
+}
+
+.qbatura-footer > * {
+	margin-block: 0;
+}
+
+.qbatura-footer :focus-visible {
+	outline-color: var(--c-white);
+}
+
+.qbatura-footer__top {
+	padding: 2rem var(--qbatura-gutter) 1rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.qbatura-footer-nav.wp-block-navigation {
+	gap: 0.75rem 3rem;
+	font-size: var(--fs-xs);
+	font-weight: 500;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.qbatura-footer-nav .wp-block-navigation__container,
+.qbatura-footer-nav .wp-block-page-list {
+	gap: 0.75rem 3rem;
+}
+
+.qbatura-footer .qbatura-footer-nav .wp-block-navigation-item__content {
+	color: rgba(255, 255, 255, 0.6);
+	transition: color 0.2s;
+}
+
+.qbatura-footer .qbatura-footer-nav .wp-block-navigation-item__content:hover {
+	color: var(--c-white);
+}
+
+/* Kontrast: .55 na czarnym ≈ 6:1. */
+.qbatura-footer__year {
+	margin: 0;
+	font-size: var(--fs-xs);
+	letter-spacing: 0.1em;
+	line-height: 1.6;
+	color: rgba(255, 255, 255, 0.55);
+}
+
+.qbatura-footer__bottom {
+	gap: 1rem 2rem;
+	padding: 1rem var(--qbatura-gutter);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.qbatura-footer__address,
+.qbatura-footer__policy {
+	margin: 0;
+	font-size: var(--fs-2xs);
+	line-height: 1.7;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.55);
+}
+
+.qbatura-footer__address a:hover,
+.qbatura-footer__policy a:hover {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.qbatura-wordmark {
+	overflow: hidden;
+	padding: 4rem var(--qbatura-gutter) 0;
+	font-size: clamp(1rem, 5vw, 3rem);
+	font-weight: 900;
+	letter-spacing: -0.02em;
+	line-height: 0.8;
+	text-transform: uppercase;
+	color: var(--c-white);
+}
+
+@media (max-width: 768px) {
+	.qbatura-footer__top {
+		flex-direction: column;
+		gap: 1rem;
+		padding: 1.5rem var(--qbatura-gutter) 1rem;
+	}
+
+	.qbatura-footer__bottom {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+		padding: 0.75rem var(--qbatura-gutter);
+	}
+
+	.qbatura-wordmark {
+		padding-inline: 0.5rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.qbatura-footer-nav .wp-block-navigation__container,
+	.qbatura-footer-nav .wp-block-page-list {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.75rem;
+	}
+}
+
+/* ─── RWD: HERO ─── */
+
+@media (max-width: 768px) {
+	/* „REALIZACJE” w Inter Black ≈ 6.1em — dzielnik 6.3 mieści słowo w szerokości ekranu. */
+	.qbatura-hero__title {
+		font-size: clamp(2.25rem, calc((100vw - 2 * var(--qbatura-gutter)) / 6.3), 7rem);
+		padding: 2.5rem var(--qbatura-gutter) 2rem;
+	}
+
+	.qbatura-hero__meta {
+		flex-direction: column;
+		gap: 1rem;
+		padding: 2rem var(--qbatura-gutter) 2.5rem;
+	}
+
+	.qbatura-filters {
+		gap: 0.75rem 1.5rem;
+		padding: 2rem var(--qbatura-gutter) 2.5rem;
+	}
+
+	.qbatura-filters a {
+		min-width: unset;
+	}
+}

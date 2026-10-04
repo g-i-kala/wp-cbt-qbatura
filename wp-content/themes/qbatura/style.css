@@ -1,0 +1,16 @@
+/*
+Theme Name: Qbatura
+Theme URI: https://github.com/g-i-kala/wp-cbt-qbatura
+Author: Karo Creative Designs
+Description: Motyw blokowy (FSE) dla pracowni projektowej Qbatura. Typograficzny, minimalistyczny design odwzorowany z makiety HTML. Współpracuje z wtyczką Qbatura Core (realizacje).
+Requires at least: 6.7
+Tested up to: 6.9
+Requires PHP: 8.1
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: qbatura
+Tags: full-site-editing, block-patterns, one-column, custom-colors, translation-ready, accessibility-ready
+*/
+
+/* Style motywu są w assets/css/ (base.css, layout.css, blocks/*.css) — ten plik zawiera tylko nagłówek. */

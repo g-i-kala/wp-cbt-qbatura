@@ -1,0 +1,204 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"useRootPaddingAwareAlignments": true,
+		"border": {
+			"radius": false
+		},
+		"color": {
+			"custom": false,
+			"customDuotone": false,
+			"customGradient": false,
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"duotone": [],
+			"gradients": [],
+			"palette": [
+				{ "slug": "green-main", "name": "Zieleń (główna)", "color": "#bdc192" },
+				{ "slug": "green-soft", "name": "Szałwia", "color": "#d0d6cc" },
+				{ "slug": "green-light", "name": "Zieleń jasna", "color": "#e0eccc" },
+				{ "slug": "olive-dark", "name": "Oliwka", "color": "#7f897f" },
+				{ "slug": "earth", "name": "Ochra", "color": "#a59168" },
+				{ "slug": "terracotta", "name": "Terakota", "color": "#c97b5a" },
+				{ "slug": "white", "name": "Biały", "color": "#ffffff" },
+				{ "slug": "text", "name": "Tekst", "color": "#1a1a1a" },
+				{ "slug": "text-muted", "name": "Tekst pomocniczy", "color": "#555555" },
+				{ "slug": "border", "name": "Linia jasna", "color": "#e0e2e6" }
+			]
+		},
+		"layout": {
+			"contentSize": "48rem",
+			"wideSize": "80rem"
+		},
+		"shadow": {
+			"defaultPresets": false
+		},
+		"spacing": {
+			"defaultSpacingSizes": false,
+			"units": [ "px", "rem", "%", "vw" ],
+			"spacingSizes": [
+				{ "slug": "20", "name": "XS", "size": "0.5rem" },
+				{ "slug": "30", "name": "S", "size": "1rem" },
+				{ "slug": "40", "name": "M", "size": "1.5rem" },
+				{ "slug": "50", "name": "L", "size": "2.5rem" },
+				{ "slug": "60", "name": "XL", "size": "4rem" },
+				{ "slug": "70", "name": "XXL", "size": "5rem" }
+			]
+		},
+		"typography": {
+			"customFontSize": false,
+			"defaultFontSizes": false,
+			"dropCap": false,
+			"fluid": false,
+			"fontFamilies": [
+				{
+					"slug": "inter",
+					"name": "Inter",
+					"fontFamily": "Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Inter",
+							"fontStyle": "normal",
+							"fontWeight": "100 900",
+							"fontDisplay": "swap",
+							"src": [ "file:./assets/fonts/inter/InterVariable.woff2" ]
+						}
+					]
+				}
+			],
+			"fontSizes": [
+				{ "slug": "2xs", "name": "Etykieta (11 px)", "size": "0.6875rem" },
+				{ "slug": "xs", "name": "Bardzo mały", "size": "0.72rem" },
+				{ "slug": "small", "name": "Mały", "size": "0.75rem" },
+				{ "slug": "body", "name": "Tekst", "size": "0.875rem" },
+				{ "slug": "medium", "name": "Średni", "size": "1rem" },
+				{ "slug": "large", "name": "Duży (liczby)", "size": "2.5rem" },
+				{ "slug": "x-large", "name": "Pas oferty", "size": "clamp(2rem, 5vw, 5.5rem)" },
+				{ "slug": "display", "name": "Tytuł strony", "size": "clamp(3rem, 7vw, 8rem)" }
+			]
+		},
+		"custom": {
+			"line": "5px solid var(--wp--preset--color--text)",
+			"line-soft-width": "2px",
+			"header-height": "56px"
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--white)",
+			"text": "var(--wp--preset--color--text)"
+		},
+		"spacing": {
+			"blockGap": "1.25rem",
+			"padding": {
+				"top": "0",
+				"bottom": "0",
+				"left": "var(--qbatura-gutter)",
+				"right": "var(--qbatura-gutter)"
+			}
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--inter)",
+			"fontSize": "var(--wp--preset--font-size--medium)",
+			"fontWeight": "400",
+			"lineHeight": "1.6"
+		},
+		"elements": {
+			"link": {
+				"color": { "text": "inherit" },
+				"typography": { "textDecoration": "none" }
+			},
+			"heading": {
+				"typography": {
+					"fontWeight": "800",
+					"letterSpacing": "-0.01em",
+					"lineHeight": "1.15",
+					"textTransform": "uppercase"
+				}
+			},
+			"h1": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--display)",
+					"fontWeight": "900",
+					"letterSpacing": "-0.025em",
+					"lineHeight": "0.88"
+				}
+			},
+			"h2": { "typography": { "fontSize": "1.5rem" } },
+			"h3": { "typography": { "fontSize": "1rem", "fontWeight": "700", "letterSpacing": "0.04em" } },
+			"h4": { "typography": { "fontSize": "0.875rem", "fontWeight": "700", "letterSpacing": "0.08em" } },
+			"button": {
+				"border": { "radius": "0", "width": "0" },
+				"color": {
+					"background": "var(--wp--preset--color--earth)",
+					"text": "var(--wp--preset--color--text)"
+				},
+				"spacing": {
+					"padding": { "top": "0.85rem", "bottom": "0.85rem", "left": "2.5rem", "right": "2.5rem" }
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--xs)",
+					"fontWeight": "700",
+					"letterSpacing": "0.22em",
+					"lineHeight": "1.4",
+					"textTransform": "uppercase"
+				},
+				":hover": {
+					"color": {
+						"background": "var(--wp--preset--color--olive-dark)",
+						"text": "var(--wp--preset--color--text)"
+					}
+				},
+				":focus": {
+					"color": {
+						"background": "var(--wp--preset--color--olive-dark)",
+						"text": "var(--wp--preset--color--text)"
+					}
+				}
+			}
+		},
+		"blocks": {
+			"core/paragraph": {
+				"typography": { "fontSize": "var(--wp--preset--font-size--body)", "lineHeight": "1.85" }
+			},
+			"core/list": {
+				"typography": { "fontSize": "var(--wp--preset--font-size--body)", "lineHeight": "1.85" }
+			},
+			"core/separator": {
+				"border": { "top": { "color": "var(--wp--preset--color--border)", "width": "2px", "style": "solid" } },
+				"color": { "text": "var(--wp--preset--color--border)" }
+			},
+			"core/site-title": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)",
+					"fontWeight": "700",
+					"letterSpacing": "0.18em",
+					"textTransform": "uppercase",
+					"lineHeight": "1"
+				}
+			},
+			"core/post-title": {
+				"typography": { "textTransform": "uppercase" }
+			}
+		}
+	},
+	"customTemplates": [
+		{
+			"name": "page-sections",
+			"title": "Strona sekcyjna (hero i sekcje z wzorców)",
+			"postTypes": [ "page" ]
+		},
+		{
+			"name": "page-projects",
+			"title": "Realizacje — lista z filtrami",
+			"postTypes": [ "page" ]
+		}
+	],
+	"templateParts": [
+		{ "name": "header", "title": "Nagłówek", "area": "header" },
+		{ "name": "footer", "title": "Stopka", "area": "footer" }
+	]
+}

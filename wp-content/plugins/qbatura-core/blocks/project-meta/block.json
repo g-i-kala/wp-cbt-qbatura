@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "qbatura/project-meta",
+	"title": "Dane realizacji",
+	"category": "theme",
+	"icon": "list-view",
+	"description": "Parametry realizacji z pól „Dane realizacji”. Puste pola są pomijane.",
+	"keywords": [ "realizacja", "parametry", "projekt" ],
+	"textdomain": "qbatura-core",
+	"usesContext": [ "postId", "postType" ],
+	"attributes": {
+		"variant": {
+			"type": "string",
+			"enum": [ "list", "card" ],
+			"default": "list"
+		}
+	},
+	"supports": {
+		"html": false,
+		"reusable": false,
+		"spacing": {
+			"margin": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php"
+}

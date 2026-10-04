@@ -1,0 +1,26 @@
+/* Korekty tylko dla edytora. */
+
+/* Sekcje z animacją wejścia są w edytorze zawsze widoczne. */
+.qbatura-reveal {
+	opacity: 1 !important;
+	transform: none !important;
+}
+
+/* Nagłówek i nakładka w Edytorze witryny — bez pozycjonowania fixed, nakładka widoczna do podglądu. */
+.editor-styles-wrapper .qbatura-header {
+	position: relative;
+	top: 0;
+}
+
+.editor-styles-wrapper .qbatura-menu {
+	position: relative;
+	inset: auto;
+	min-height: 32rem;
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+.editor-styles-wrapper .qbatura-main {
+	padding-top: 0;
+}

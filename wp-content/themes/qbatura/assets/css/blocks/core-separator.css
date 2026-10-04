@@ -1,0 +1,10 @@
+/* Separator „Gruba linia” — 5 px w kolorze tekstu, pełna szerokość (makieta: .page-hero-divider). */
+
+.wp-block-separator.is-style-qbatura-thick {
+	width: 100%;
+	max-width: none;
+	margin: 0;
+	border: none;
+	border-top: var(--line);
+	opacity: 1;
+}

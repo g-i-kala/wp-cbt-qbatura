@@ -1,0 +1,31 @@
+<!-- wp:template-part {"slug":"header","area":"header","tagName":"div"} /-->
+
+<!-- wp:group {"tagName":"main","anchor":"main","className":"qbatura-main","layout":{"type":"constrained"}} -->
+<main id="main" class="wp-block-group qbatura-main">
+<!-- wp:group {"align":"full","className":"qbatura-hero","backgroundColor":"green-soft","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull qbatura-hero has-green-soft-background-color has-background">
+<!-- wp:query-title {"type":"archive","showPrefix":false,"className":"qbatura-hero__title"} /-->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:query {"queryId":0,"query":{"inherit":true,"perPage":10,"postType":"post"},"className":"qbatura-page-content","layout":{"type":"constrained"}} -->
+<div class="wp-block-query qbatura-page-content">
+<!-- wp:post-template -->
+<!-- wp:post-title {"level":2,"isLink":true} /-->
+<!-- wp:post-date {"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.14em"}},"fontSize":"2xs","textColor":"text-muted"} /-->
+<!-- wp:post-excerpt /-->
+<!-- /wp:post-template -->
+<!-- wp:query-pagination -->
+<!-- wp:query-pagination-previous /-->
+<!-- wp:query-pagination-numbers /-->
+<!-- wp:query-pagination-next /-->
+<!-- /wp:query-pagination -->
+<!-- wp:query-no-results -->
+<!-- wp:pattern {"slug":"qbatura/no-results"} /-->
+<!-- /wp:query-no-results -->
+</div>
+<!-- /wp:query -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"div"} /-->

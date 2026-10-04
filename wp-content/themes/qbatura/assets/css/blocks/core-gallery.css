@@ -1,0 +1,79 @@
+/*
+ * Galeria „Siatka Qbatura” — kafle 4:3 bez odstępów, jasne linie, gruba linia u góry
+ * (makieta: .gallery-grid). 3 → 2 → 1 kolumna.
+ */
+
+.wp-block-gallery.is-style-qbatura-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0 !important;
+	border-top: var(--line);
+}
+
+.wp-block-gallery.is-style-qbatura-grid > .wp-block-image {
+	width: auto !important;
+	margin: 0 !important;
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+	border-right: 1px solid var(--c-border);
+	border-bottom: 1px solid var(--c-border);
+	background: var(--c-olive-dark);
+	transition:
+		transform 0.25s ease,
+		opacity 0.25s ease;
+}
+
+.wp-block-gallery.is-style-qbatura-grid > .wp-block-image:nth-child(3n) {
+	border-right: none;
+}
+
+.wp-block-gallery.is-style-qbatura-grid > .wp-block-image > a,
+.wp-block-gallery.is-style-qbatura-grid > .wp-block-image img {
+	display: block;
+	width: 100%;
+	height: 100% !important;
+	object-fit: cover;
+}
+
+.wp-block-gallery.is-style-qbatura-grid > .wp-block-image img {
+	transition: transform 0.35s ease;
+}
+
+/* Hover tylko na urządzeniach z kursorem — na dotyku stan „przyklejał się”. */
+@media (hover: hover) {
+	.wp-block-gallery.is-style-qbatura-grid > .wp-block-image:hover {
+		opacity: 0.85;
+	}
+
+	.wp-block-gallery.is-style-qbatura-grid > .wp-block-image:hover img {
+		transform: scale(1.04);
+	}
+}
+
+.wp-block-gallery.is-style-qbatura-grid > .wp-block-image a:focus-visible {
+	outline-offset: -4px;
+}
+
+@media (max-width: 1024px) {
+	.wp-block-gallery.is-style-qbatura-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.wp-block-gallery.is-style-qbatura-grid > .wp-block-image:nth-child(3n) {
+		border-right: 1px solid var(--c-border);
+	}
+
+	.wp-block-gallery.is-style-qbatura-grid > .wp-block-image:nth-child(2n) {
+		border-right: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.wp-block-gallery.is-style-qbatura-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.wp-block-gallery.is-style-qbatura-grid > .wp-block-image {
+		border-right: none !important;
+	}
+}

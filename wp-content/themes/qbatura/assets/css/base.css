@@ -1,0 +1,201 @@
+/*
+ * Qbatura — podstawy: tokeny, reset uzupełniający, dostępność, nawiasy [ ], animacja wejścia.
+ * Kolory i fonty pochodzą z theme.json (--wp--preset--*); tu tylko aliasy z makiety HTML.
+ */
+
+:root {
+	--c-green-main: var(--wp--preset--color--green-main);
+	--c-green-soft: var(--wp--preset--color--green-soft);
+	--c-green-light: var(--wp--preset--color--green-light);
+	--c-olive-dark: var(--wp--preset--color--olive-dark);
+	--c-earth: var(--wp--preset--color--earth);
+	--c-terracotta: var(--wp--preset--color--terracotta);
+	--c-white: var(--wp--preset--color--white);
+	--c-text: var(--wp--preset--color--text);
+	--c-text-muted: var(--wp--preset--color--text-muted);
+	--c-border: var(--wp--preset--color--border);
+
+	/* Tekst pomocniczy na kolorowych tłach (terakota, oliwka, ochra) — kontrast ≥ 4.5:1 (W2). */
+	--c-text-on-color: #262626;
+
+	/* Minimalne rozmiary tekstu (W1). */
+	--fs-2xs: var(--wp--preset--font-size--2-xs, 0.6875rem);
+	--fs-xs: var(--wp--preset--font-size--xs, 0.72rem);
+
+	--line: 5px solid var(--c-text);
+	--line-soft: 2px solid var(--c-border);
+
+	--qbatura-gutter: 2.5rem;
+	--qbatura-header-h: 56px;
+	--qbatura-admin-bar: var(--wp-admin--admin-bar--height, 0px);
+}
+
+@media (max-width: 768px) {
+	:root {
+		--qbatura-gutter: 1.5rem;
+		--qbatura-header-h: 48px;
+	}
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	/* Inter Variable ma oś „opsz” — bez tego duże napisy dostają węższy krój niż w makiecie (Google Fonts, opsz 14). */
+	font-optical-sizing: none;
+	font-variation-settings: 'opsz' 14;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+button {
+	font: inherit;
+	color: inherit;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+}
+
+address {
+	font-style: normal;
+}
+
+/* Linki w tekście ciągłym (np. strony prawne) są podkreślone — w makiecie takich nie było. */
+.wp-block-post-content :where(p, li) > a:not([class]) {
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+/* ─── DOSTĘPNOŚĆ ─── */
+
+:focus-visible {
+	outline: 2px solid var(--c-text);
+	outline-offset: 3px;
+}
+
+/* Link „Przejdź do treści” dodawany przez WordPress — wygląd jak w makiecie. */
+.skip-link.screen-reader-text:focus {
+	top: 0;
+	left: 0;
+	z-index: 400;
+	width: auto;
+	height: auto;
+	clip-path: none;
+	padding: 0.75rem 1.25rem;
+	background: var(--c-text);
+	color: var(--c-white);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	line-height: normal;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+/* ─── NAWIASY [ ] (W5) ─── */
+/* Stały element stylu etykiet — w treści jest sam tekst. */
+
+.is-style-qbatura-eyebrow::before,
+.qbatura-brackets::before,
+.qbatura-lang a::before {
+	content: '[';
+}
+
+.is-style-qbatura-eyebrow::after,
+.qbatura-brackets::after,
+.qbatura-lang a::after {
+	content: ']';
+}
+
+/* ─── ETYKIETA (styl bloku akapit / nagłówek) ─── */
+
+.is-style-qbatura-eyebrow {
+	font-size: var(--fs-2xs) !important;
+	font-weight: 500;
+	letter-spacing: 0.2em;
+	line-height: 1.6;
+	text-transform: uppercase;
+	color: var(--c-text-muted);
+}
+
+/* ─── PRZEŁĄCZNIK JĘZYKA ─── */
+
+.qbatura-lang {
+	font-size: var(--fs-xs);
+	letter-spacing: 0.1em;
+	white-space: nowrap;
+}
+
+.qbatura-lang a {
+	margin: 0 0.15rem;
+	text-decoration: none;
+}
+
+/* ─── KOLORY TŁA: tekst pomocniczy (W2) i jasne linie w odcieniu tła (E8) ─── */
+/* --line-soft trzeba nadpisać razem z --c-border, bo var() rozwiązuje się tam, gdzie jest zdefiniowane. */
+
+.has-green-main-background-color,
+.has-terracotta-background-color,
+.has-earth-background-color,
+.has-olive-dark-background-color {
+	--c-text-muted: var(--c-text-on-color);
+}
+
+.has-green-soft-background-color {
+	--c-border: #e8ebe6;
+	--line-soft: 2px solid var(--c-border);
+}
+
+.has-green-main-background-color {
+	--c-border: #dee0c9;
+	--line-soft: 2px solid var(--c-border);
+}
+
+.has-terracotta-background-color {
+	--c-border: #e4bdad;
+	--line-soft: 2px solid var(--c-border);
+}
+
+.has-earth-background-color {
+	--c-border: #d2c8b4;
+	--line-soft: 2px solid var(--c-border);
+}
+
+.has-green-light-background-color {
+	--c-border: #f0f6e6;
+	--line-soft: 2px solid var(--c-border);
+}
+
+/* ─── ANIMACJA WEJŚCIA SEKCJI ─── */
+/* Ukrywanie tylko gdy działa JS (klasa .js na <html>) — bez JS treść jest widoczna. */
+
+@media (prefers-reduced-motion: no-preference) {
+	.js .qbatura-reveal {
+		opacity: 0;
+		transform: translateY(20px);
+		transition:
+			opacity 0.6s ease,
+			transform 0.6s ease;
+	}
+
+	.js .qbatura-reveal.is-visible {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+/* ─── OGRANICZONY RUCH ─── */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		transition-duration: 0.01ms !important;
+		transition-delay: 0s !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+	}
+}
