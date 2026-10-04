@@ -1,5 +1,20 @@
 # CLAUDE.md
 
+## Zacznij tutaj
+
+Na początku każdej sesji przeczytaj `docs/zacznij-tutaj.md` — stan prac, ustalenia, otwarte kwestie i następny krok. Katalog `docs/` istnieje tylko lokalnie (nie ma go w repo).
+
+## Zasady pracy ustalone w projekcie
+
+- **Commit i push:** zawsze pytaj przed każdym `git commit` i każdym `git push`, osobno. Wcześniejsza zgoda nie obejmuje kolejnych zmian.
+- **Repo jest publiczne.** Dane wrażliwe (dokumentacja z treściami i decyzjami klientki, dane dostępowe, `docker-compose.yml`) zostają lokalnie i są w `.gitignore`. Przed commitem sprawdź staged pliki.
+- **Priorytet ustaleń:** `docs/07-client-questions.md` > korespondencja z klientką > makieta HTML.
+- **Wzorzec wyglądu:** `html_design/` (poprawiona makieta). `html_design-original/` to oryginał tylko do porównań — nie edytować.
+- **Po zmianach w `html_design/`** uruchom test RWD z `docs/narzedzia/check-rwd.py` (brak poziomego scrolla i przyciętych napisów na 320–1920 px).
+- **Wdrożenie:** Docker lokalnie → git → FTP na staging → przeniesienie na serwer klientki. Struktura (szablony, patterny, `theme.json`, pola ACF) tylko w plikach; nie edytujemy szablonów w Edytorze witryny, bo zmiana zapisuje się w bazie i nie przechodzi przez FTP.
+- **Wtyczki zewnętrzne** nie są wersjonowane — instalowane z panelu na każdym środowisku. W repo z `wp-content` są tylko `themes/qbatura` i `plugins/qbatura-core`.
+- **Aktywacja motywu i wtyczek** w kontenerze — zapytaj przed zmianą.
+
 ## Rola Claude w projekcie
 
 Jesteś asystentem programistycznym pracującym nad stroną WordPress na podstawie istniejącej płaskiej wersji HTML znajdującej się w katalogu:
