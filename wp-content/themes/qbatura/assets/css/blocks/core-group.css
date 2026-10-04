@@ -188,9 +188,146 @@ body:not(.editor-styles-wrapper) .is-style-qbatura-band > .wp-block-heading a::a
 	}
 }
 
+/* ─── HISTORIA: TEKST, ZDJĘCIE, LICZBY (makieta: .about-grid) ─── */
+
+.wp-block-group.qbatura-about {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 4rem;
+	align-items: start;
+}
+
+.qbatura-about.qbatura-about > *,
+.qbatura-about__text.qbatura-about__text > *,
+.qbatura-about__aside.qbatura-about__aside > *,
+.qbatura-stats.qbatura-stats > *,
+.qbatura-stats.qbatura-stats > * > * {
+	margin: 0;
+}
+
+.qbatura-about__text > p {
+	font-size: 0.875rem;
+	line-height: 1.9;
+	color: var(--c-text-muted);
+}
+
+.qbatura-about__text.qbatura-about__text > p + p {
+	margin-top: 1.5rem;
+}
+
+/* Zdjęcie obok liczb (desktop), nad nimi (≤1024px) — małe, żeby nie dominowało (E9). */
+.wp-block-group.qbatura-about__aside {
+	display: flex;
+	align-items: flex-start;
+	gap: 2.5rem;
+}
+
+.qbatura-about__aside > .wp-block-image {
+	flex: 0 0 200px;
+}
+
+.qbatura-about__aside > .wp-block-image img {
+	display: block;
+	width: 100%;
+}
+
+.wp-block-group.qbatura-stats {
+	display: flex;
+	flex-direction: column;
+	gap: 1.75rem;
+}
+
+/* Kreska przy liczbie: kolor z panelu Obramowanie (styl inline), domyślnie zieleń główna. */
+.qbatura-stats > * {
+	padding-left: 1.5rem;
+	border-left: 3px solid var(--wp--preset--color--green-main);
+}
+
+.qbatura-stats.qbatura-stats > * > p:first-child {
+	margin-bottom: 0.4rem;
+	font-size: var(--wp--preset--font-size--large);
+	font-weight: 900;
+	line-height: 1;
+}
+
+.qbatura-stats > * > p:last-child {
+	font-size: var(--fs-2xs);
+	font-weight: 500;
+	letter-spacing: 0.14em;
+	line-height: normal;
+	text-transform: uppercase;
+	color: var(--c-text-muted);
+}
+
+/* ─── DRZEWO SPECJALIZACJI (makieta: .tree-*) ─── */
+
+.is-style-qbatura-section > .qbatura-tree__root {
+	margin-bottom: 1.75rem;
+	font-size: var(--fs-2xs);
+	font-weight: 500;
+	letter-spacing: 0.2em;
+	line-height: normal;
+	text-transform: uppercase;
+	color: var(--c-text-muted);
+}
+
+.wp-block-group.qbatura-tree {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 0.5rem;
+	border-left: var(--line);
+}
+
+.qbatura-tree.qbatura-tree > * {
+	position: relative;
+	flex: 1 1 50%;
+	min-width: 180px;
+	margin: 0;
+	padding: 1.25rem 1.5rem 1.25rem 2rem;
+	border-bottom: 1px solid var(--c-border);
+}
+
+.qbatura-tree > *::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 1.5rem;
+	height: 2px;
+	background: var(--c-text);
+}
+
+.qbatura-tree.qbatura-tree > * > * {
+	margin: 0;
+}
+
+.qbatura-tree > * > .wp-block-heading {
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	line-height: normal;
+}
+
+.qbatura-tree.qbatura-tree > * > p {
+	margin-top: 0.2rem;
+	font-size: var(--fs-xs);
+	letter-spacing: 0.03em;
+	line-height: normal;
+	color: var(--c-text-muted);
+}
+
 /* ─── RWD ─── */
 
 @media (max-width: 1024px) {
+	.wp-block-group.qbatura-about__aside {
+		flex-direction: column;
+	}
+
+	.qbatura-about__aside > .wp-block-image {
+		flex-basis: auto;
+		width: 200px;
+	}
+
 	.wp-block-group.is-style-qbatura-band {
 		flex-direction: column;
 		align-items: flex-start;
@@ -209,5 +346,10 @@ body:not(.editor-styles-wrapper) .is-style-qbatura-band > .wp-block-heading a::a
 
 	.is-style-qbatura-band > .wp-block-heading {
 		min-width: unset;
+	}
+
+	.wp-block-group.qbatura-about {
+		grid-template-columns: 1fr;
+		gap: 2.5rem;
 	}
 }

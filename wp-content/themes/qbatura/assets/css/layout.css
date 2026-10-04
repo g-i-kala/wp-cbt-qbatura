@@ -598,6 +598,7 @@
 	font-size: var(--fs-xs);
 	font-weight: 500;
 	letter-spacing: 0.14em;
+	line-height: normal;
 	text-transform: uppercase;
 }
 
@@ -620,7 +621,7 @@
 	margin: 0;
 	font-size: var(--fs-xs);
 	letter-spacing: 0.1em;
-	line-height: 1.6;
+	line-height: normal;
 	color: rgba(255, 255, 255, 0.55);
 }
 
@@ -638,6 +639,10 @@
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
 	color: rgba(255, 255, 255, 0.55);
+}
+
+.qbatura-footer__policy {
+	line-height: normal;
 }
 
 .qbatura-footer__address a:hover,
